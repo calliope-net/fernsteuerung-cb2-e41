@@ -16,10 +16,11 @@ radio.onReceivedData(function (receivedData) {
 let list: number[] = []
 let l = 0
 receiver.beimStart(
-receiver.eModell.calli2bot,
+receiver.erModell.v3,
 90,
-true,
+false,
 65,
+true,
 175
 )
 loops.everyInterval(200, function () {
