@@ -1,9 +1,12 @@
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    r_callibot.resetEncoder(r_callibot.eMotor.beide)
-    receiver.c2Motor255(150)
+    receiver.fahreJoystick(1, 0, 0)
+})
+input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
+    basic.showNumber(l)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
-    basic.showNumber(l)
+    r_callibot.resetEncoder(r_callibot.eMotor.beide)
+    receiver.c2Motor255(150)
 })
 radio.onReceivedData(function (receivedData) {
     if (radio.isBetriebsart(receivedData, radio.e0Betriebsart.p0)) {
@@ -13,6 +16,10 @@ radio.onReceivedData(function (receivedData) {
         radio.zeige5x5Joystick(receivedData)
     }
 })
+function f1 () {
+    receiver.fahreSchritt(radio.speedPicker(50), 16, 20)
+    receiver.fahreSchritt(radio.speedPicker(-30), 16, 20)
+}
 let list: number[] = []
 let l = 0
 receiver.beimStart(
