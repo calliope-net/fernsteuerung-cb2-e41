@@ -16,12 +16,10 @@ radio.onReceivedData(function (receivedData) {
 let list: number[] = []
 let l = 0
 receiver.beimStart(
-receiver.erModell.calli2bot,
+receiver.eHardware.calli2bot,
 90,
 true,
-65,
-true,
-175
+65
 )
 loops.everyInterval(200, function () {
     if (radio.isBetriebsart(radio.radio_receivedBuffer19(), radio.e0Betriebsart.p2)) {
