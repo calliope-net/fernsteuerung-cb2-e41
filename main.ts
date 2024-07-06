@@ -1,27 +1,17 @@
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    receiver.fahreJoystick(1, 0, 0)
-})
-input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
-    basic.showNumber(l)
-})
-input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
-    r_callibot.resetEncoder(r_callibot.eMotor.beide)
-    receiver.c2Motor255(150)
+    receiver.fahreSchritt(190, 31, 50)
+    receiver.fahreSchritt(190, 1, 50)
 })
 radio.onReceivedData(function (receivedData) {
     if (radio.isBetriebsart(receivedData, radio.e0Betriebsart.p0)) {
-        receiver.c2motor128(radio.getByte(receivedData, radio.eBufferPointer.m0, radio.eBufferOffset.b0_Motor), radio.getByte(receivedData, radio.eBufferPointer.m0, radio.eBufferOffset.b1_Servo), 40)
+        receiver.c2motor128lenken16(radio.getByte(receivedData, radio.eBufferPointer.m0, radio.eBufferOffset.b0_Motor), radio.getByte(receivedData, radio.eBufferPointer.m0, radio.eBufferOffset.b1_Servo))
         receiver.rgbLEDs(receiver.eRGBled.a, 0x0000ff, true)
         radio.zeige5x5Buffer(receivedData)
         radio.zeige5x5Joystick(receivedData)
     }
 })
-function f1 () {
-    receiver.fahreSchritt(radio.speedPicker(50), 16, 20)
-    receiver.fahreSchritt(radio.speedPicker(-30), 16, 20)
-}
-let list: number[] = []
 let l = 0
+let list: number[] = []
 receiver.beimStart(
 receiver.eHardware.calli2bot,
 90,
@@ -33,7 +23,7 @@ loops.everyInterval(200, function () {
         list = r_callibot.encoderValue()
         l = list[0]
         if (l > 50 * 31.25) {
-            receiver.c2Motor255(128)
+        	
         }
     }
 })
