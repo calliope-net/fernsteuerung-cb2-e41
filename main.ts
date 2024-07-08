@@ -1,6 +1,10 @@
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    receiver.fahreSchritt(190, 31, 50)
-    receiver.fahreSchritt(190, 1, 50)
+	
+})
+input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
+    while (cb2.seite9Linienfolger(100, 50, 10)) {
+    	
+    }
 })
 radio.onReceivedData(function (receivedData) {
     if (radio.isBetriebsart(receivedData, radio.e0Betriebsart.p0)) {
