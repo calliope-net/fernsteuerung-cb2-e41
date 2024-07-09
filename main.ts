@@ -1,5 +1,6 @@
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-	
+    cb2.fahreSchritt(190, 31, 50)
+    cb2.fahreSchritt(190, 1, 50)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     while (cb2.seite9Linienfolger(100, 50, 10)) {
@@ -18,9 +19,7 @@ radio.onReceivedData(function (receivedData) {
     radio.zeige5x5Buffer(receivedData)
     radio.zeige5x5Joystick(receivedData)
 })
-receiver.beimStart(
-receiver.eHardware.calli2bot,
-90,
+cb2.beimStart(
 true,
-65
+180
 )
