@@ -9,7 +9,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
 })
 radio.onReceivedData(function (receivedData) {
     if (radio.isBetriebsart(receivedData, radio.e0Betriebsart.p0)) {
-        if (radio.getByte(receivedData, radio.eBufferPointer.m0, radio.eBufferOffset.b0_Motor) > 128 && cb2.readUltraschallEntfernung(cb2.eDist.cm) < 25) {
+        if (radio.getByte(receivedData, radio.eBufferPointer.m0, radio.eBufferOffset.b0_Motor) > 128 && cb2.readUltraschallAbstand() < 25) {
             cb2.writeMotor128Servo16(128, 16)
         } else {
             cb2.writeMotor128Servo16(radio.getByte(receivedData, radio.eBufferPointer.m0, radio.eBufferOffset.b0_Motor), radio.getByte(receivedData, radio.eBufferPointer.m0, radio.eBufferOffset.b1_Servo))
