@@ -4,7 +4,7 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     cb2.fahreStrecke(radio.speedPicker(-60), radio.protractorPicker(170), 30)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
-    while (cb2.beispielSpurfolger(radio.speedPicker(80), radio.speedPicker(40), 10)) {
+    while (cb2.beispielSpurfolger(radio.speedPicker(100), radio.speedPicker(50), 10)) {
     	
     }
 })
