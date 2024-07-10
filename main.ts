@@ -1,7 +1,7 @@
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    cb2.fahreSchritt(radio.speedPicker(85), radio.protractorPicker(90), 100)
-    cb2.fahreSchritt(radio.speedPicker(30), radio.protractorPicker(10), 30)
-    cb2.fahreSchritt(radio.speedPicker(-60), radio.protractorPicker(170), 30)
+    cb2.fahreStrecke(radio.speedPicker(85), radio.protractorPicker(90), 100)
+    cb2.fahreStrecke(radio.speedPicker(30), radio.protractorPicker(10), 30)
+    cb2.fahreStrecke(radio.speedPicker(-60), radio.protractorPicker(170), 30)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     while (cb2.seite9Linienfolger(100, 50, 10)) {
