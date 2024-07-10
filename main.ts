@@ -19,7 +19,14 @@ radio.onReceivedData(function (receivedData) {
     radio.zeige5x5Buffer(receivedData)
     radio.zeige5x5Joystick(receivedData)
 })
+let l = 0
 cb2.beimStart(
 true,
 180
 )
+let _4digit = grove.createDisplay(DigitalPin.C16, DigitalPin.C17)
+loops.everyInterval(500, function () {
+    l = cb2.readEncoderValues()[0]
+    _4digit.point(l < 0)
+    _4digit.show(l)
+})
