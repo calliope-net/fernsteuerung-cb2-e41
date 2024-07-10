@@ -4,7 +4,7 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     cb2.fahreStrecke(radio.speedPicker(-60), radio.protractorPicker(170), 30)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
-    while (cb2.seite9Linienfolger(100, 50, 10)) {
+    while (cb2.beispielSpurfolger(radio.speedPicker(80), radio.speedPicker(40), 10)) {
     	
     }
 })
@@ -17,7 +17,7 @@ radio.onReceivedData(function (receivedData) {
         }
     } else if (radio.isBetriebsart(receivedData, radio.e0Betriebsart.p0) && radio.getaktiviert(receivedData, radio.e3aktiviert.mc)) {
         if (radio.getByte(receivedData, radio.eBufferPointer.md, radio.eBufferOffset.b1_Servo) == 1) {
-            while (cb2.seite9Linienfolger(radio.getByte(receivedData, radio.eBufferPointer.mc, radio.eBufferOffset.b0_Motor), radio.getByte(receivedData, radio.eBufferPointer.mc, radio.eBufferOffset.b1_Servo), radio.getAbstand(receivedData))) {
+            while (cb2.beispielSpurfolger(radio.getByte(receivedData, radio.eBufferPointer.mc, radio.eBufferOffset.b0_Motor), radio.getByte(receivedData, radio.eBufferPointer.md, radio.eBufferOffset.b0_Motor), radio.getAbstand(receivedData))) {
             	
             }
         }
