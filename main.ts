@@ -44,3 +44,14 @@ storage.getNumber(StorageSlots.s1)
 storage.putNumber(StorageSlots.s1, cb2.storageBufferGet())
 cb2.writeReset()
 let _4digit = grove.createDisplay(DigitalPin.C16, DigitalPin.C17)
+control.inBackground(function () {
+    if (radio.isBetriebsart(radio.radio_receivedBuffer19(), radio.e0Betriebsart.p0) && radio.getaktiviert(radio.radio_receivedBuffer19(), radio.e3aktiviert.mc)) {
+        if (radio.getByte(radio.radio_receivedBuffer19(), radio.eBufferPointer.md, radio.eBufferOffset.b1_Servo) == 2) {
+            if (cb2.beispielSpurfolger(radio.getByte(radio.radio_receivedBuffer19(), radio.eBufferPointer.mc, radio.eBufferOffset.b0_Motor), radio.getByte(radio.radio_receivedBuffer19(), radio.eBufferPointer.md, radio.eBufferOffset.b0_Motor), radio.getAbstand(radio.radio_receivedBuffer19()))) {
+            	
+            }
+        } else if (radio.getByte(radio.radio_receivedBuffer19(), radio.eBufferPointer.md, radio.eBufferOffset.b1_Servo) == 3) {
+        	
+        }
+    }
+})
