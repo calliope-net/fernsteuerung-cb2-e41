@@ -4,7 +4,7 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "fernsteuerung": "github:calliope-net/fernsteuerung#v0.7.20",
+        "fernsteuerung": "github:calliope-net/fernsteuerung#v0.7.22",
         "Grove": "github:calliope-edu/pxt-grove#v0.9.2"
     },
     "files": [
