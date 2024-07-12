@@ -1,19 +1,10 @@
-function fd2 (b1: boolean, b2: boolean, n3: number) {
-    if (b1) {
-    	
-    } else if (false) {
-    	
-    }
-}
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     cb2.fahreStrecke(radio.speedPicker(85), radio.protractorPicker(90), 100)
     cb2.fahreStrecke(radio.speedPicker(30), radio.protractorPicker(10), 30)
     cb2.fahreStrecke(radio.speedPicker(-60), radio.protractorPicker(170), 30)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
-    while (cb2.beispielSpurfolger(radio.speedPicker(100), radio.speedPicker(50), 10)) {
-    	
-    }
+	
 })
 function fahrenJoystick () {
     if (radio.getSensor(radio.radio_receivedBuffer19(), radio.eBufferPointer.m0, radio.eSensor.b6) && (radio.getByte(radio.radio_receivedBuffer19(), radio.eBufferPointer.m0, radio.eBufferOffset.b0_Motor) > 128 && cb2.readUltraschallAbstand() < radio.getAbstand(radio.radio_receivedBuffer19()))) {
@@ -53,9 +44,14 @@ let _4digit = grove.createDisplay(DigitalPin.C16, DigitalPin.C17)
 basic.forever(function () {
     if (d1) {
         d2 = true
-        radio.comment(cb2.beispielSpurfolger(radio.getByte(radio.radio_receivedBuffer19(), radio.eBufferPointer.mc, radio.eBufferOffset.b0_Motor), radio.getByte(radio.radio_receivedBuffer19(), radio.eBufferPointer.md, radio.eBufferOffset.b0_Motor), radio.getAbstand(radio.radio_receivedBuffer19())))
+        cb2.beispielSpurfolger(
+        radio.getByte(radio.radio_receivedBuffer19(), radio.eBufferPointer.mc, radio.eBufferOffset.b0_Motor),
+        radio.getByte(radio.radio_receivedBuffer19(), radio.eBufferPointer.md, radio.eBufferOffset.b0_Motor),
+        radio.getSensor(radio.radio_receivedBuffer19(), radio.eBufferPointer.mc, radio.eSensor.b5),
+        radio.getAbstand(radio.radio_receivedBuffer19())
+        )
     } else if (d2) {
         d2 = false
-        cb2.writeMotoren128(128, 128)
+        cb2.writeMotorenStop()
     }
 })
