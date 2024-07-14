@@ -40,10 +40,10 @@ basic.forever(function () {
         dSchleife = true
         cb2.beispielSpurfolger(btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b0_Motor), btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b0_Motor), btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eSensor.b6), btf.getAbstand(btf.btf_receivedBuffer19()))
     } else if (d3 && !(btf.timeout(1000))) {
-        dSchleife = true
         if (cb2.beispielSpurfolger16(192, 31, 15)) {
         	
         }
+        dSchleife = true
     } else if (dSchleife) {
         dSchleife = false
         cb2.writeMotorenStop()
