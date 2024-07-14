@@ -38,14 +38,11 @@ cb2.beimStart(true)
 basic.forever(function () {
     if (d2 && !(btf.timeout(1000))) {
         dSchleife = true
-        cb2.beispielSpurfolger(
-        btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b0_Motor),
-        btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b0_Motor),
-        btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eSensor.b6),
-        btf.getAbstand(btf.btf_receivedBuffer19())
-        )
+        cb2.beispielSpurfolger(btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b0_Motor), btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b0_Motor), btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eSensor.b6), btf.getAbstand(btf.btf_receivedBuffer19()))
     } else if (d3 && !(btf.timeout(1000))) {
-        btf.comment(cb2.seite9Linienfolger(100, 50, 10))
+        if (cb2.beispielSpurfolger16(255, 31)) {
+        	
+        }
     } else if (dSchleife) {
         dSchleife = false
         cb2.writeMotorenStop()
