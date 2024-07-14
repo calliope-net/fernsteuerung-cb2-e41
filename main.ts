@@ -1,11 +1,11 @@
-input.onButtonEvent(Button.A, sender.buttonEvent(ButtonEvent.Hold), function () {
-    btf.setFunkgruppeButton(btf.eFunkgruppeButton.minus)
-    storage.putNumber(StorageSlots.s1, cb2.storageBufferGet())
-})
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     cb2.fahreStrecke(btf.speedPicker(85), btf.protractorPicker(90), 100)
     cb2.fahreStrecke(btf.speedPicker(30), btf.protractorPicker(10), 30)
     cb2.fahreStrecke(btf.speedPicker(-60), btf.protractorPicker(170), 30)
+})
+input.onButtonEvent(Button.B, sender.buttonEventValue(ButtonEvent.Hold), function () {
+    btf.setFunkgruppeButton(btf.eFunkgruppeButton.plus)
+    storage.putNumber(StorageSlots.s1, cb2.storageBufferGet())
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
 	
@@ -17,6 +17,10 @@ function fahrenJoystick () {
         cb2.writeMotor128Servo16(btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.m0, btf.eBufferOffset.b0_Motor), btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.m0, btf.eBufferOffset.b1_Servo), 45)
     }
 }
+input.onButtonEvent(Button.A, sender.buttonEventValue(ButtonEvent.Hold), function () {
+    btf.setFunkgruppeButton(btf.eFunkgruppeButton.minus)
+    storage.putNumber(StorageSlots.s1, cb2.storageBufferGet())
+})
 btf.onReceivedData(function (receivedData) {
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
         fahrenJoystick()
@@ -28,10 +32,6 @@ btf.onReceivedData(function (receivedData) {
     btf.zeige5x5Buffer(receivedData)
     btf.zeige5x5Joystick(receivedData)
 })
-input.onButtonEvent(Button.B, sender.buttonEvent(ButtonEvent.Hold), function () {
-    btf.setFunkgruppeButton(btf.eFunkgruppeButton.plus)
-    storage.putNumber(StorageSlots.s1, cb2.storageBufferGet())
-})
 let d2 = false
 let d1 = false
 cb2.beimStart(
@@ -40,18 +40,23 @@ storage.getNumber(StorageSlots.s1)
 )
 storage.putNumber(StorageSlots.s1, cb2.storageBufferGet())
 cb2.writeReset()
-let _4digit = grove.createDisplay(DigitalPin.C16, DigitalPin.C17)
 basic.forever(function () {
-    if (d1) {
+    if (d1 && !(btf.timeout(1000))) {
         d2 = true
         cb2.beispielSpurfolger(
         btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b0_Motor),
         btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b0_Motor),
-        btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eSensor.b5),
+        btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eSensor.b6),
         btf.getAbstand(btf.btf_receivedBuffer19())
         )
     } else if (d2) {
         d2 = false
         cb2.writeMotorenStop()
+    }
+})
+loops.everyInterval(700, function () {
+    if (btf.timeout(1000)) {
+        cb2.writeMotorenStop()
+        receiver.rgbLEDs(receiver.eRGBled.a, 0xff0000, true)
     }
 })
