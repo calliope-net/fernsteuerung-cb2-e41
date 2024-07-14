@@ -41,7 +41,7 @@ basic.forever(function () {
         cb2.beispielSpurfolger(btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b0_Motor), btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b0_Motor), btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eSensor.b6), btf.getAbstand(btf.btf_receivedBuffer19()))
     } else if (d3 && !(btf.timeout(1000))) {
         dSchleife = true
-        if (cb2.beispielSpurfolger16(255, 31, 15)) {
+        if (cb2.beispielSpurfolger16(192, 31, 15)) {
         	
         }
     } else if (dSchleife) {
