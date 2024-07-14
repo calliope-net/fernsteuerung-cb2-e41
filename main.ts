@@ -5,7 +5,6 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 })
 input.onButtonEvent(Button.B, sender.buttonEventValue(ButtonEvent.Hold), function () {
     btf.setFunkgruppeButton(btf.eFunkgruppeButton.plus)
-    storage.putNumber(StorageSlots.s1, cb2.storageBufferGet())
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
 	
@@ -19,7 +18,6 @@ function fahrenJoystick () {
 }
 input.onButtonEvent(Button.A, sender.buttonEventValue(ButtonEvent.Hold), function () {
     btf.setFunkgruppeButton(btf.eFunkgruppeButton.minus)
-    storage.putNumber(StorageSlots.s1, cb2.storageBufferGet())
 })
 btf.onReceivedData(function (receivedData) {
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
@@ -34,12 +32,7 @@ btf.onReceivedData(function (receivedData) {
 })
 let d2 = false
 let d1 = false
-cb2.beimStart(
-true,
-storage.getNumber(StorageSlots.s1)
-)
-storage.putNumber(StorageSlots.s1, cb2.storageBufferGet())
-cb2.writeReset()
+cb2.beimStart(true)
 basic.forever(function () {
     if (d1 && !(btf.timeout(1000))) {
         d2 = true
