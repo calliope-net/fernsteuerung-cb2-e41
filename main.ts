@@ -45,7 +45,8 @@ basic.forever(function () {
         192,
         31,
         bWiederholung,
-        btf.getAbstand(btf.btf_receivedBuffer19())
+        20,
+        cb2.eI2C.x22
         )
         bWiederholung = true
     } else if (bWiederholung) {
