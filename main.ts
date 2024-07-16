@@ -1,7 +1,5 @@
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    cb2.fahreStrecke(btf.speedPicker(85), btf.protractorPicker(90), 100)
-    cb2.fahreStrecke(btf.speedPicker(30), btf.protractorPicker(10), 30)
-    cb2.fahreStrecke(btf.speedPicker(-60), btf.protractorPicker(170), 30)
+	
 })
 input.onButtonEvent(Button.B, sender.buttonEventValue(ButtonEvent.Hold), function () {
     btf.setFunkgruppeButton(btf.eFunkgruppeButton.plus)
@@ -11,7 +9,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     dauerhaft_1 = !(dauerhaft_1)
 })
 function fahrenJoystick () {
-    if (btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b6) && (btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.m0, btf.eBufferOffset.b0_Motor) > 128 && cb2.readUltraschallAbstand() < btf.getAbstand(btf.btf_receivedBuffer19()))) {
+    if (true && (btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.m0, btf.eBufferOffset.b0_Motor) > 128 && cb2.readUltraschallAbstand() < btf.getAbstand(btf.btf_receivedBuffer19()))) {
         cb2.writeMotorenStop()
     } else {
         cb2.writeMotor128Servo16(btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.m0, btf.eBufferOffset.b0_Motor), btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.m0, btf.eBufferOffset.b1_Servo), 45)
@@ -21,10 +19,12 @@ input.onButtonEvent(Button.A, sender.buttonEventValue(ButtonEvent.Hold), functio
     btf.setFunkgruppeButton(btf.eFunkgruppeButton.minus)
 })
 btf.onReceivedData(function (receivedData) {
-    if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
-        fahrenJoystick()
-    }
     dauerhaft_1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1) && (btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc) && btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b1_Servo) == 1)
+    if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
+        cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
+    } else if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2)) {
+        cb2.fahreBuffer19(btf.btf_receivedBuffer19())
+    }
     receiver.rgbLEDs(receiver.eRGBled.a, 0x0000ff, true)
     btf.zeige5x5Buffer(receivedData)
     btf.zeige5x5Joystick(receivedData)
@@ -36,10 +36,13 @@ basic.forever(function () {
     if (dauerhaft_1 && !(btf.timeout(1000))) {
         cb2.beispielSpurfolger16(
         192,
+        50,
         31,
+        0,
         bWiederholung,
+        true,
         20,
-        cb2.eI2C.x22
+        cb2.eI2C.x21
         )
         bWiederholung = true
     } else if (bWiederholung) {
