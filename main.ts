@@ -8,7 +8,7 @@ input.onButtonEvent(Button.B, sender.buttonEventValue(ButtonEvent.Hold), functio
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     btf.set_localProgram(true)
-    d1 = !(d1)
+    dauerhaft_1 = !(dauerhaft_1)
 })
 function fahrenJoystick () {
     if (btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.m0, btf.eSensor.b6) && (btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.m0, btf.eBufferOffset.b0_Motor) > 128 && cb2.readUltraschallAbstand() < btf.getAbstand(btf.btf_receivedBuffer19()))) {
@@ -23,24 +23,17 @@ input.onButtonEvent(Button.A, sender.buttonEventValue(ButtonEvent.Hold), functio
 btf.onReceivedData(function (receivedData) {
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
         fahrenJoystick()
-    } else if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0) && btf.getaktiviert(receivedData, btf.e3aktiviert.mc)) {
-        btf.comment(btf.btf_text("dauerhaft"))
     }
-    d1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1) && (btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc) && btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b1_Servo) == 1)
-    d2 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p0) && (btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc) && btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b1_Servo) == 2)
+    dauerhaft_1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1) && (btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc) && btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b1_Servo) == 1)
     receiver.rgbLEDs(receiver.eRGBled.a, 0x0000ff, true)
     btf.zeige5x5Buffer(receivedData)
     btf.zeige5x5Joystick(receivedData)
 })
 let bWiederholung = false
-let d2 = false
-let d1 = false
-cb2.beimStart(true)
+let dauerhaft_1 = false
+cb2.beimStart()
 basic.forever(function () {
-    if (d2 && !(btf.timeout(1000))) {
-        bWiederholung = true
-        cb2.beispielSpurfolger(btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b0_Motor), btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b0_Motor), btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eSensor.b6), btf.getAbstand(btf.btf_receivedBuffer19()))
-    } else if (d1 && !(btf.timeout(1000))) {
+    if (dauerhaft_1 && !(btf.timeout(1000))) {
         cb2.beispielSpurfolger16(
         192,
         31,
