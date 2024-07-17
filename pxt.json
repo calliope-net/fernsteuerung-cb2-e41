@@ -5,9 +5,8 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "fernsteuerung": "github:calliope-net/fernsteuerung#v0.8.56",
-        "Grove": "github:calliope-edu/pxt-grove#v0.9.2",
-        "storageBuffer": "github:calliope-net/storagebuffer#v0.0.2"
+        "fernsteuerung": "github:calliope-net/fernsteuerung#v0.10.0",
+        "Grove": "github:calliope-edu/pxt-grove#v0.9.2"
     },
     "files": [
         "main.blocks",
