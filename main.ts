@@ -30,13 +30,13 @@ basic.forever(function () {
     if (dauerhaft_Beispiel_1 && !(btf.timeout(1000))) {
         dauerhaft_Knopf_B = false
         cb2.beispielSpurfolger16(
-        192,
-        160,
-        31,
-        0,
+        btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b0_Motor),
+        btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b0_Motor),
+        btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b1_Servo),
+        btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b2_Fahrstrecke),
         bWiederholung,
-        true,
-        20,
+        btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eSensor.b6Abstand),
+        btf.getAbstand(btf.btf_receivedBuffer19()),
         cb2.eI2C.x22
         )
         bWiederholung = true
