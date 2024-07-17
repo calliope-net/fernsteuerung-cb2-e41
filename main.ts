@@ -31,25 +31,25 @@ basic.forever(function () {
         dauerhaft_Knopf_B = false
         cb2.beispielSpurfolger16(
         192,
-        50,
+        160,
         31,
         0,
         bWiederholung,
         true,
         20,
-        cb2.eI2C.x21
+        cb2.eI2C.x22
         )
         bWiederholung = true
     } else if (dauerhaft_Knopf_B && !(btf.timeout(30000, true))) {
         cb2.beispielSpurfolger16(
         192,
-        50,
+        160,
         31,
         0,
         bWiederholung,
         true,
         20,
-        cb2.eI2C.x21
+        cb2.eI2C.x22
         )
         bWiederholung = true
     } else if (bWiederholung) {
