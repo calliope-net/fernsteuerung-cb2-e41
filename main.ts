@@ -4,11 +4,16 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     btf.set_localProgram(true)
     dauerhaft_Knopf_B = !(dauerhaft_Knopf_B)
+    receiver.rgbLEDs(receiver.eRGBled.a, 0xff00ff, false)
+})
+btf.onReceivedError(function (receivedError) {
+    receiver.rgbLEDs(receiver.eRGBled.a, 0x00ff00, true)
 })
 input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.setFunkgruppeButton(btf.eFunkgruppeButton.plus)
 })
 btf.onReceivedData(function (receivedData) {
+    dauerhaft_Knopf_B = false
     dauerhaft_Beispiel_1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1Lokal) && btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc)
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0Fahren) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
         cb2.fahreJoystick(receivedData, 40)
@@ -28,7 +33,6 @@ let dauerhaft_Knopf_B = false
 cb2.beimStart()
 basic.forever(function () {
     if (dauerhaft_Beispiel_1 && !(btf.timeout(1000))) {
-        dauerhaft_Knopf_B = false
         cb2.beispielSpurfolger16(
         btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b0_Motor),
         btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b0_Motor),
@@ -53,6 +57,7 @@ basic.forever(function () {
         )
         bWiederholung = true
     } else if (bWiederholung) {
+        dauerhaft_Knopf_B = false
         bWiederholung = false
         cb2.writeMotorenStop()
     }
