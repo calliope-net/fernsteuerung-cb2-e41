@@ -4,9 +4,9 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*",
         "fernsteuerung": "github:calliope-net/fernsteuerung#v0.10.10",
-        "Grove": "github:calliope-edu/pxt-grove#v0.9.2"
+        "Grove": "github:calliope-edu/pxt-grove#v0.9.2",
+        "funk": "*"
     },
     "files": [
         "main.blocks",
@@ -17,7 +17,7 @@
         "test.ts"
     ],
     "targetVersions": {
-        "target": "4.0.29",
+        "target": "6.0.41",
         "targetId": "calliopemini"
     },
     "supportedTargets": [
