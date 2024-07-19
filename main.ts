@@ -12,7 +12,7 @@ btf.onReceivedData(function (receivedData) {
     dauerhaft_Beispiel_1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1Lokal) && (btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc) && btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b1_Servo) == 1)
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0Fahren) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
         cb2.fahreJoystick(receivedData, 40)
-    } else if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Strecken)) {
+    } else if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Fahrplan)) {
         cb2.fahreBuffer19(receivedData)
     }
     receiver.rgbLEDs(receiver.eRGBled.a, 0x0000ff, true)
