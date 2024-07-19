@@ -9,7 +9,7 @@ input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function (
     btf.setFunkgruppeButton(btf.eFunkgruppeButton.plus)
 })
 btf.onReceivedData(function (receivedData) {
-    dauerhaft_Beispiel_1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1Lokal) && (btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc) && btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b1_Servo) == 1)
+    dauerhaft_Beispiel_1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1Lokal) && btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc)
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0Fahren) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
         cb2.fahreJoystick(receivedData, 40)
     } else if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Fahrplan)) {
