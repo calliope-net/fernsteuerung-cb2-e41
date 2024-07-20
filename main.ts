@@ -4,10 +4,6 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     btf.set_localProgram(true)
     dauerhaft_Knopf_B = !(dauerhaft_Knopf_B)
-    receiver.rgbLEDs(receiver.eRGBled.a, 0xff00ff, false)
-})
-btf.onReceivedError(function (receivedError) {
-    receiver.rgbLEDs(receiver.eRGBled.a, 0x00ff00, true)
 })
 input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.setFunkgruppeButton(btf.eFunkgruppeButton.plus)
@@ -65,6 +61,12 @@ basic.forever(function () {
 loops.everyInterval(700, function () {
     if (btf.timeout(1000)) {
         cb2.writeMotorenStop()
+    }
+    if (btf.getReceivedBufferError(2000)) {
+        receiver.rgbLEDs(receiver.eRGBled.a, 0x00ff00, true)
+    } else if (btf.timeout(1000)) {
         receiver.rgbLEDs(receiver.eRGBled.a, 0xff0000, true)
+    } else if (btf.timeout(1000, true)) {
+        receiver.rgbLEDs(receiver.eRGBled.a, 0xff00ff, false)
     }
 })
