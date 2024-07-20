@@ -2,6 +2,7 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 	
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
+    btf.set_timeoutDisbled(true)
     dauerhaft_Knopf_B = !(dauerhaft_Knopf_B)
 })
 input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function () {
@@ -39,7 +40,7 @@ basic.forever(function () {
         cb2.eI2C.x22
         )
         bWiederholung = true
-    } else if (dauerhaft_Knopf_B && !(btf.timeout(30000, true))) {
+    } else if (dauerhaft_Knopf_B && !(btf.timeout(30000, false))) {
         cb2.beispielSpurfolger16(
         192,
         160,
