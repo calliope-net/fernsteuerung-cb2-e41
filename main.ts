@@ -1,6 +1,3 @@
-input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-	
-})
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     btf.set_timeoutDisbled(true)
     dauerhaft_Knopf_B = !(dauerhaft_Knopf_B)
@@ -19,6 +16,7 @@ btf.onReceivedData(function (receivedData) {
     receiver.rgbLEDs(receiver.eRGBled.a, 0x0000ff, true)
     btf.zeige5x5Buffer(receivedData)
     btf.zeige5x5Joystick(receivedData)
+    receiver.digitalWritePin(receiver.eDigitalPins.C16, !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
 })
 input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.setFunkgruppeButton(btf.eFunkgruppeButton.minus)
