@@ -1,9 +1,15 @@
+input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
+    btf.set_timeoutDisbled(true)
+    cb2.fahreStrecke(btf.programmSchritt(192, 30, 30), 50)
+    cb2.fahreStrecke(btf.programmSchritt(64, 30, 30), 50)
+    cb2.fahreStrecke(btf.programmSchritt(255, 16, 20), 50)
+})
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     btf.set_timeoutDisbled(true)
     dauerhaft_Knopf_B = !(dauerhaft_Knopf_B)
 })
 input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function () {
-    btf.setFunkgruppeButton(btf.eFunkgruppeButton.plus)
+    btf.buttonBhold()
 })
 btf.onReceivedData(function (receivedData) {
     dauerhaft_Knopf_B = false
@@ -19,7 +25,7 @@ btf.onReceivedData(function (receivedData) {
     receiver.digitalWritePin(receiver.eDigitalPins.C16, !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
 })
 input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function () {
-    btf.setFunkgruppeButton(btf.eFunkgruppeButton.minus)
+    btf.buttonAhold()
 })
 let bWiederholung = false
 let dauerhaft_Beispiel_1 = false
