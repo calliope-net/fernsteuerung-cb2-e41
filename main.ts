@@ -1,10 +1,10 @@
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     btf.set_timeoutDisbled(true)
-    cb2.fahreStrecke(btf.programmSchritt(192, 31, 40))
-    cb2.fahreStrecke(btf.programmSchritt(64, 31, 40))
-    cb2.fahreStrecke(btf.programmSchritt(255, 16, 20))
-    cb2.fahreStrecke(btf.programmSchritt(192, 1, 150))
-    cb2.fahreStrecke(btf.programmSchritt(1, 16, 20))
+    cb2.fahreStreckeAbstand(btf.programmSchritt(192, 31, 40), true, 20)
+    cb2.fahreStreckeAbstand(btf.programmSchritt(64, 31, 40), true, 20)
+    cb2.fahreStreckeAbstand(btf.programmSchritt(255, 16, 20), true, 20)
+    cb2.fahreStreckeAbstand(btf.programmSchritt(192, 1, 150), true, 20)
+    cb2.fahreStreckeAbstand(btf.programmSchritt(1, 16, 20), true, 20)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     btf.set_timeoutDisbled(true)
