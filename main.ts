@@ -19,7 +19,7 @@ btf.onReceivedData(function (receivedData) {
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0Fahren) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
         cb2.fahreJoystick(receivedData, 40)
     } else if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Fahrplan)) {
-        cb2.fahreBuffer19(receivedData)
+        cb2.fahreBuffer19(receivedData, btf.e3aktiviert.m1)
     }
     receiver.rgbLEDs(receiver.eRGBled.a, 0x0000ff, true)
     btf.zeige5x5Buffer(receivedData)
