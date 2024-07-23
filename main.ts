@@ -1,3 +1,6 @@
+input.onButtonEvent(Button.AB, btf.buttonEventValue(ButtonEvent.Hold), function () {
+    btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
+})
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     btf.set_timeoutDisbled(true)
     cb2.fahreStrecke(192, 31, 40)
@@ -33,6 +36,7 @@ let bWiederholung = false
 let dauerhaft_Beispiel_1 = false
 let dauerhaft_Knopf_B = false
 cb2.beimStart()
+btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 basic.forever(function () {
     if (dauerhaft_Beispiel_1 && !(btf.timeout(1000))) {
         cb2.beispielSpurfolger16(
