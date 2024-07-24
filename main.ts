@@ -20,9 +20,9 @@ btf.onReceivedData(function (receivedData) {
     dauerhaft_Knopf_B = false
     dauerhaft_Beispiel_1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1Lokal) && btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc)
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0Fahren) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
-        cb2.fahreJoystick(receivedData, 0)
+        cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
     } else if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Fahrplan)) {
-        cb2.fahreBuffer19(receivedData, btf.e3aktiviert.f2)
+        cb2.fahreBuffer19(btf.btf_receivedBuffer19(), btf.e3aktiviert.f2)
     }
     receiver.rgbLEDs(receiver.eRGBled.a, 0x0000ff, true)
     btf.zeige5x5Buffer(receivedData)
@@ -50,7 +50,7 @@ basic.forever(function () {
         cb2.eI2C.x22
         )
         bWiederholung = true
-    } else if (dauerhaft_Knopf_B && !(btf.timeout(30000, false))) {
+    } else if (dauerhaft_Knopf_B && !(btf.timeout(30000, true))) {
         cb2.beispielSpurfolger16(
         192,
         160,
