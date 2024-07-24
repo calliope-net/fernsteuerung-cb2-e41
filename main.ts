@@ -22,7 +22,7 @@ btf.onReceivedData(function (receivedData) {
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0Fahren) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
         cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
     } else if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Fahrplan)) {
-        cb2.fahreBuffer19(btf.btf_receivedBuffer19(), btf.e3aktiviert.f2)
+        cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.f2)
     }
     receiver.rgbLEDs(receiver.eRGBled.a, 0x0000ff, true)
     btf.zeige5x5Buffer(receivedData)
