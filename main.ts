@@ -48,7 +48,7 @@ basic.forever(function () {
         bWiederholung,
         btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eSensor.b6Abstand),
         btf.getAbstand(btf.btf_receivedBuffer19()),
-        cb2.eI2C.x22
+        cb2.eI2C.x21
         )
         bWiederholung = true
     } else if (dauerhaft_Knopf_B && !(btf.timeout(30000, true))) {
