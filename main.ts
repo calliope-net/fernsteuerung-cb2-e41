@@ -73,11 +73,9 @@ loops.everyInterval(700, function () {
     if (btf.timeout(1000)) {
         cb2.writeMotorenStop()
     }
-    if (btf.getReceivedBufferError(2000)) {
-        receiver.rgbLEDs(receiver.eRGBled.a, 0x00ff00, true)
-    } else if (btf.timeout(1000)) {
+    if (btf.timeout(1000)) {
         receiver.rgbLEDs(receiver.eRGBled.a, 0xff0000, true)
     } else if (btf.timeout(1000, true)) {
-        receiver.rgbLEDs(receiver.eRGBled.a, 0xff00ff, false)
+        receiver.rgbLEDs(receiver.eRGBled.a, 0x00ff00, false)
     }
 })
