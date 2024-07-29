@@ -25,7 +25,7 @@ btf.onReceivedData(function (receivedData) {
         cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
         cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
     }
-    receiver.rgbLEDs(receiver.eRGBled.a, 0x0000ff, true)
+    receiver.setLedColors(receiver.eRGBled.a, 0x0000ff, true, true)
     btf.zeige5x5Buffer(receivedData)
     btf.zeige5x5Joystick(receivedData)
     receiver.digitalWritePin(receiver.eDigitalPins.C16, !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
@@ -74,8 +74,8 @@ loops.everyInterval(700, function () {
         cb2.writeMotorenStop()
     }
     if (btf.timeout(1000)) {
-        receiver.rgbLEDs(receiver.eRGBled.a, 0xff0000, true)
+        receiver.setLedColors(receiver.eRGBled.a, 0xff0000, true, true)
     } else if (btf.timeout(1000, true)) {
-        receiver.rgbLEDs(receiver.eRGBled.a, 0x00ff00, false)
+        receiver.setLedColors(receiver.eRGBled.a, 0x00ff00, true)
     }
 })
