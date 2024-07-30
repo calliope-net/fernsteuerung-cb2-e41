@@ -1,6 +1,6 @@
 {
     "name": "fernsteuerung-cb2-e41",
-    "version": "0.7.1",
+    "version": "0.7.2",
     "description": "",
     "dependencies": {
         "core": "*",
