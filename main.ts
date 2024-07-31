@@ -16,7 +16,7 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
 input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonBhold()
 })
-btf.onReceivedData(function (receivedData) {
+btf.onReceivedDataChanged(function (receivedData, changed) {
     dauerhaft_Knopf_B = false
     dauerhaft_Beispiel_1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1Lokal) && btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc)
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0Fahren) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
@@ -29,6 +29,9 @@ btf.onReceivedData(function (receivedData) {
     btf.zeige5x5Buffer(receivedData)
     btf.zeige5x5Joystick(receivedData)
     receiver.digitalWritePin(receiver.eDigitalPins.C16, !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
+})
+btf.onReceivedData(function (receivedData) {
+	
 })
 input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonAhold()
