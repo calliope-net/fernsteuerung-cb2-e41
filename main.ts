@@ -30,9 +30,6 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     btf.zeige5x5Joystick(receivedData)
     receiver.digitalWritePin(receiver.eDigitalPins.C16, !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
 })
-btf.onReceivedData(function (receivedData) {
-	
-})
 input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonAhold()
 })
