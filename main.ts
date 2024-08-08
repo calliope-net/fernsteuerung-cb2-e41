@@ -18,7 +18,7 @@ input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function (
 })
 btf.onReceivedDataChanged(function (receivedData, changed) {
     dauerhaft_Knopf_B = false
-    dauerhaft_Beispiel_1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1Lokal) && btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc)
+    dauerhaft_Spurfolger = cb2.set_dauerhaft_Spurfolger(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc)
     cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
     cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
     cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
@@ -31,23 +31,14 @@ input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function (
     btf.buttonAhold()
 })
 let bWiederholung = false
-let dauerhaft_Beispiel_1 = false
+let dauerhaft_Spurfolger = false
 let dauerhaft_Knopf_B = false
 cb2.beimStart()
 btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
 btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 basic.forever(function () {
-    if (dauerhaft_Beispiel_1 && !(btf.timeout(1000))) {
-        cb2.beispielSpurfolger16(
-        btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b0_Motor),
-        btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.md, btf.eBufferOffset.b0_Motor),
-        btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b1_Servo),
-        btf.getByte(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eBufferOffset.b2_Fahrstrecke),
-        bWiederholung,
-        btf.getSensor(btf.btf_receivedBuffer19(), btf.eBufferPointer.mc, btf.eSensor.b6Abstand),
-        btf.getAbstand(btf.btf_receivedBuffer19()),
-        cb2.eI2C.x21
-        )
+    if (dauerhaft_Spurfolger && !(btf.timeout(1000))) {
+        cb2.spurfolgerBuffer(btf.btf_receivedBuffer19(), bWiederholung, cb2.eI2C.x21)
         bWiederholung = true
     } else if (dauerhaft_Knopf_B && !(btf.timeout(30000, true))) {
         cb2.beispielSpurfolger16(
