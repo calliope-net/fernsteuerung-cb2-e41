@@ -34,6 +34,7 @@ let bWiederholung = false
 let dauerhaft_Beispiel_1 = false
 let dauerhaft_Knopf_B = false
 cb2.beimStart()
+btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
 btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 basic.forever(function () {
     if (dauerhaft_Beispiel_1 && !(btf.timeout(1000))) {
