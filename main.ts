@@ -19,12 +19,9 @@ input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function (
 btf.onReceivedDataChanged(function (receivedData, changed) {
     dauerhaft_Knopf_B = false
     dauerhaft_Beispiel_1 = btf.isBetriebsart(btf.btf_receivedBuffer19(), btf.e0Betriebsart.p1Lokal) && btf.getaktiviert(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc)
-    if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p0Fahren) && btf.getaktiviert(receivedData, btf.e3aktiviert.m0)) {
-        cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
-    } else if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Fahrplan)) {
-        cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
-        cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
-    }
+    cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
+    cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
+    cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
     receiver.setLedColors(receiver.eRGBled.a, 0x0000ff, true, true)
     btf.zeige5x5Buffer(receivedData)
     btf.zeige5x5Joystick(receivedData)
