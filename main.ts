@@ -87,7 +87,7 @@ btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 abstand_Knopf_A = false
 basic.forever(function () {
     cb2.dauerhaft_SpurfolgerBuffer(dauerhaft_Spurfolger, btf.btf_receivedBuffer19(), cb2.eI2C.x21)
-    cb2.raiseAbstandEvent(abstand_Knopf_A, 40, randint(60, 120))
+    cb2.raiseAbstandEvent(abstand_Knopf_A, 40, 45)
     dauerhaft_Knopf_B_Spurfolger()
 })
 loops.everyInterval(700, function () {
