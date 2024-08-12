@@ -38,7 +38,7 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0x0000ff, true, true)
     btf.zeige5x5Buffer(receivedData)
     btf.zeige5x5Joystick(receivedData)
-    receiver.digitalWritePin(receiver.eDigitalPins.C16, !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
+    pins.pinDigitalWrite(pins.pins_eDigitalPins(pins.eDigitalPins.C16), !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
 })
 cb2.onStopEvent(function (abstand_Stop, cm) {
     if (abstand_Knopf_A) {
@@ -87,9 +87,7 @@ btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 abstand_Knopf_A = false
 basic.forever(function () {
     cb2.dauerhaft_SpurfolgerBuffer(dauerhaft_Spurfolger, btf.btf_receivedBuffer19(), cb2.eI2C.x21)
-    if (abstand_Knopf_A) {
-        cb2.raiseAbstandEvent(40, randint(60, 120), 25)
-    }
+    cb2.raiseAbstandEvent(abstand_Knopf_A, 40, randint(60, 120))
     dauerhaft_Knopf_B_Spurfolger()
 })
 loops.everyInterval(700, function () {
