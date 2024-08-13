@@ -55,15 +55,6 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
 })
 cb2.onStopEvent(function (abstand_Stop, cm) {
     cb2.dauerhaft_AbstandAusweichen(dauerhaft_Ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
-    cb2.beispielAbstandAusweichen(
-    abstand_Knopf_A,
-    abstand_Stop,
-    255,
-    16,
-    64,
-    cb2.zufallServo16(1, 5, 27, 31),
-    cb2.cb2_zehntelsekunden(btf.ePause.s1)
-    )
 })
 function dauerhaft_Knopf_B_Spurfolger () {
     if (dauerhaft_Knopf_B && !(btf.timeout(60000, true))) {
