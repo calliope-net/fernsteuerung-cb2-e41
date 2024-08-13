@@ -10,7 +10,8 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     cb2.fahreStrecke(192, 31, 40)
     cb2.fahreStrecke(64, 31, 40)
     cb2.fahreStrecke(255, 16, 20)
-    cb2.fahreStrecke(192, 1, 150)
+    cb2.fahreStrecke(192, 2, 150)
+    cb2.fahreStrecke(192, 30, 150)
     cb2.fahreStrecke(1, 16, 20)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
@@ -36,12 +37,12 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
 cb2.onStopEvent(function (abstand_Stop, cm) {
     cb2.dauerhaft_AbstandAusweichen(dauerhaft_Ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
     cb2.lokalAbstandAusweichen(
-    !(spur_Knopf_B) && abstand_Knopf_A,
+    abstand_Knopf_A && !(spur_Knopf_B),
     abstand_Stop,
     255,
     16,
     64,
-    cb2.zufallServo16(1, 5, 27, 31),
+    0,
     cb2.cb2_zehntelsekunden(btf.ePause.s1)
     )
 })
