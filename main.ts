@@ -1,18 +1,3 @@
-function abstand_A_deaktiviert (abstand_Stop: boolean) {
-    if (abstand_Knopf_A) {
-        btf.reset_timer()
-        if (abstand_Stop) {
-            if (Math.randomBoolean()) {
-                cb2.writeMotor128Servo16(64, randint(1, 9))
-            } else {
-                cb2.writeMotor128Servo16(64, randint(23, 31))
-            }
-        } else {
-            basic.pause(1000)
-            cb2.writeMotor128Servo16(255, 16)
-        }
-    }
-}
 input.onButtonEvent(Button.AB, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 })
@@ -50,22 +35,15 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
 })
 cb2.onStopEvent(function (abstand_Stop, cm) {
     cb2.dauerhaft_AbstandAusweichen(dauerhaft_Ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
-    if (!(spur_Knopf_B) && abstand_Knopf_A) {
-        cb2.beispielAbstandAusweichen(
-        abstand_gestartet,
-        abstand_Stop,
-        255,
-        16,
-        64,
-        cb2.zufallServo16(1, 5, 27, 31),
-        cb2.cb2_zehntelsekunden(btf.ePause.s1)
-        )
-        abstand_gestartet = true
-    } else if (abstand_gestartet) {
-        abstand_Knopf_A = false
-        abstand_gestartet = false
-        cb2.writeMotorenStop()
-    }
+    cb2.lokalAbstandAusweichen(
+    !(spur_Knopf_B) && abstand_Knopf_A,
+    abstand_Stop,
+    255,
+    16,
+    64,
+    cb2.zufallServo16(1, 5, 27, 31),
+    cb2.cb2_zehntelsekunden(btf.ePause.s1)
+    )
 })
 function dauerhaft_Knopf_B_Spurfolger () {
     if (spur_Knopf_B) {
@@ -90,7 +68,6 @@ input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function (
     btf.buttonAhold()
 })
 let spur_gestartet = false
-let abstand_gestartet = false
 let dauerhaft_Ausweichen = false
 let dauerhaft_Spurfolger = false
 let spur_Knopf_B = false
