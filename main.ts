@@ -17,13 +17,8 @@ input.onButtonEvent(Button.AB, btf.buttonEventValue(ButtonEvent.Hold), function 
     btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    btf.set_timeoutDisbled(true)
     abstand_Knopf_A = !(abstand_Knopf_A)
-    if (abstand_Knopf_A) {
-        cb2.writeMotor128Servo16(192, 16)
-    } else {
-        cb2.writeMotorenStop()
-    }
+    btf.set_timeoutDisbled(abstand_Knopf_A)
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     btf.set_timeoutDisbled(true)
@@ -34,15 +29,15 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     cb2.fahreStrecke(1, 16, 20)
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
-    btf.set_timeoutDisbled(true)
-    dauerhaft_Knopf_B = !(dauerhaft_Knopf_B)
+    spur_Knopf_B = !(spur_Knopf_B)
+    btf.set_timeoutDisbled(spur_Knopf_B)
 })
 input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonBhold()
 })
 btf.onReceivedDataChanged(function (receivedData, changed) {
     abstand_Knopf_A = false
-    dauerhaft_Knopf_B = false
+    spur_Knopf_B = false
     dauerhaft_Spurfolger = cb2.set_dauerhaft_Spurfolger(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc)
     dauerhaft_Ausweichen = cb2.set_AbstandAusweichen(btf.btf_receivedBuffer19(), btf.e3aktiviert.md)
     cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
@@ -55,33 +50,50 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
 })
 cb2.onStopEvent(function (abstand_Stop, cm) {
     cb2.dauerhaft_AbstandAusweichen(dauerhaft_Ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
+    if (!(spur_Knopf_B) && abstand_Knopf_A) {
+        cb2.beispielAbstandAusweichen(
+        abstand_gestartet,
+        abstand_Stop,
+        255,
+        16,
+        64,
+        cb2.zufallServo16(1, 5, 27, 31),
+        cb2.cb2_zehntelsekunden(btf.ePause.s1)
+        )
+        abstand_gestartet = true
+    } else if (abstand_gestartet) {
+        abstand_Knopf_A = false
+        abstand_gestartet = false
+        cb2.writeMotorenStop()
+    }
 })
 function dauerhaft_Knopf_B_Spurfolger () {
-    if (dauerhaft_Knopf_B && !(btf.timeout(60000, true))) {
+    if (spur_Knopf_B) {
         cb2.beispielSpurfolger16(
         192,
         160,
         31,
         0,
-        dauerhaft_Wiederholung,
-        true,
+        spur_gestartet,
+        !(abstand_Knopf_A),
         20,
         cb2.eI2C.x22
         )
-        dauerhaft_Wiederholung = true
-    } else if (dauerhaft_Wiederholung) {
-        dauerhaft_Knopf_B = false
-        dauerhaft_Wiederholung = false
+        spur_gestartet = true
+    } else if (spur_gestartet) {
+        spur_Knopf_B = false
+        spur_gestartet = false
         cb2.writeMotorenStop()
     }
 }
 input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonAhold()
 })
-let dauerhaft_Wiederholung = false
+let spur_gestartet = false
+let abstand_gestartet = false
 let dauerhaft_Ausweichen = false
 let dauerhaft_Spurfolger = false
-let dauerhaft_Knopf_B = false
+let spur_Knopf_B = false
 let abstand_Knopf_A = false
 cb2.beimStart()
 btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
