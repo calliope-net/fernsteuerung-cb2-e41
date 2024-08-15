@@ -36,7 +36,7 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
 })
 cb2.onStopEvent(function (abstand_Stop, cm) {
     cb2.dauerhaft_AbstandAusweichen(dauerhaft_Ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
-    cb2.lokalAbstandAusweichen(
+    cb2.eventAbstandAusweichen(
     abstand_Knopf_A && !(spur_Knopf_B),
     abstand_Stop,
     255,
