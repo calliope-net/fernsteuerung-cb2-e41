@@ -16,7 +16,7 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
 })
 cb2.onAbstandEvent(function (abstand_Stop, cm) {
     cb2.buffer_Hindernis_ausweichen(Hindernis_ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
-    cb2.eventAbstandAusweichen(
+    cb2.event_Hindernis_ausweichen(
     abstand_Knopf_A && !(spur_Knopf_B),
     abstand_Stop,
     255,
@@ -48,7 +48,7 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
 })
 cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, cm) {
     cb2.buffer_Spur_folgen(Spur_folgen, links_hell, rechts_hell, abstand_Stop, btf.btf_receivedBuffer19())
-    cb2.eventSpurfolger(
+    cb2.event_Spur_folgen(
     spur_Knopf_B,
     links_hell,
     rechts_hell,
