@@ -17,7 +17,7 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
 cb2.onAbstandEvent(function (abstand_Stop, cm) {
     cb2.buffer_Hindernis_ausweichen(Hindernis_ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
     cb2.event_Hindernis_ausweichen(
-    abstand_Knopf_A && !(spur_Knopf_B),
+    abstand_Knopf_A,
     abstand_Stop,
     255,
     16,
@@ -94,7 +94,7 @@ btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 abstand_Knopf_A = false
 basic.forever(function () {
     cb2.raiseAbstandEvent(abstand_Knopf_A || Hindernis_ausweichen, 40, 45)
-    cb2.raiseSpurEvent(spur_Knopf_B || Spur_folgen)
+    cb2.raiseSensorEvent(spur_Knopf_B || Spur_folgen, 30, 35)
 })
 loops.everyInterval(700, function () {
     if (btf.timeout(30000, true)) {
