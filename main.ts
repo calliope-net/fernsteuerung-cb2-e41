@@ -17,7 +17,7 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
 cb2.onAbstandEvent(function (abstand_Stop, cm) {
     cb2.buffer_Hindernis_ausweichen(Hindernis_ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
     cb2.event_Hindernis_ausweichen(
-    abstand_Knopf_A,
+    abstand_Knopf_A && !(spur_Knopf_B),
     abstand_Stop,
     255,
     16,
