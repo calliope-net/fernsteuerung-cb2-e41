@@ -14,6 +14,18 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     cb2.fahreStrecke(192, 30, 150)
     cb2.fahreStrecke(1, 16, 20)
 })
+cb2.onAbstandEvent(function (abstand_Stop, cm) {
+    cb2.dauerhaft_AbstandAusweichen(dauerhaft_Ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
+    cb2.eventAbstandAusweichen(
+    abstand_Knopf_A && !(spur_Knopf_B),
+    abstand_Stop,
+    255,
+    16,
+    64,
+    0,
+    cb2.cb2_zehntelsekunden(btf.ePause.s1)
+    )
+})
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     spur_Knopf_B = !(spur_Knopf_B)
     btf.set_timeoutDisbled(spur_Knopf_B)
@@ -33,18 +45,6 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     btf.zeige5x5Buffer(receivedData)
     btf.zeige5x5Joystick(receivedData)
     pins.pinDigitalWrite(pins.pins_eDigitalPins(pins.eDigitalPins.C16), !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
-})
-cb2.onStopEvent(function (abstand_Stop, cm) {
-    cb2.dauerhaft_AbstandAusweichen(dauerhaft_Ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
-    cb2.eventAbstandAusweichen(
-    abstand_Knopf_A && !(spur_Knopf_B),
-    abstand_Stop,
-    255,
-    16,
-    64,
-    0,
-    cb2.cb2_zehntelsekunden(btf.ePause.s1)
-    )
 })
 function dauerhaft_Knopf_B_Spurfolger () {
     if (spur_Knopf_B) {
@@ -69,9 +69,9 @@ input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function (
     btf.buttonAhold()
 })
 let spur_gestartet = false
-let dauerhaft_Ausweichen = false
 let dauerhaft_Spurfolger = false
 let spur_Knopf_B = false
+let dauerhaft_Ausweichen = false
 let abstand_Knopf_A = false
 cb2.beimStart()
 btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
