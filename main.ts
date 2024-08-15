@@ -57,8 +57,7 @@ cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, cm) {
     160,
     31,
     0,
-    abstand_Knopf_A,
-    30
+    abstand_Knopf_A
     )
 })
 function dauerhaft_Knopf_B_Spurfolger () {
@@ -94,7 +93,7 @@ btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 abstand_Knopf_A = false
 basic.forever(function () {
     cb2.raiseAbstandEvent(abstand_Knopf_A || Hindernis_ausweichen, 40, 45)
-    cb2.raiseSensorEvent(spur_Knopf_B || Spur_folgen, 30, 35)
+    cb2.raiseSensorEvent(spur_Knopf_B || Spur_folgen, 30, 35, 25, cb2.eI2C.x21)
 })
 loops.everyInterval(700, function () {
     if (btf.timeout(30000, true)) {
