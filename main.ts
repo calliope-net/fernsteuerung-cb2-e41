@@ -15,7 +15,7 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     cb2.fahreStrecke(1, 16, 20)
 })
 cb2.onAbstandEvent(function (abstand_Stop, cm) {
-    cb2.dauerhaft_AbstandAusweichen(dauerhaft_Ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
+    cb2.buffer_Hindernis_ausweichen(Hindernis_ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
     cb2.eventAbstandAusweichen(
     abstand_Knopf_A && !(spur_Knopf_B),
     abstand_Stop,
@@ -37,7 +37,7 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     abstand_Knopf_A = false
     spur_Knopf_B = false
     Spur_folgen = cb2.set_Spur_folgen(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc)
-    dauerhaft_Ausweichen = cb2.set_AbstandAusweichen(btf.btf_receivedBuffer19(), btf.e3aktiviert.md)
+    Hindernis_ausweichen = cb2.set_Hindernis_ausweichen(btf.btf_receivedBuffer19(), btf.e3aktiviert.md)
     cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
     cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
     cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
@@ -86,16 +86,15 @@ input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function (
 let spur_gestartet = false
 let Spur_folgen = false
 let spur_Knopf_B = false
-let dauerhaft_Ausweichen = false
+let Hindernis_ausweichen = false
 let abstand_Knopf_A = false
 cb2.beimStart()
 btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
 btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 abstand_Knopf_A = false
 basic.forever(function () {
-    cb2.raiseAbstandEvent(abstand_Knopf_A || dauerhaft_Ausweichen, 40, 45)
+    cb2.raiseAbstandEvent(abstand_Knopf_A || Hindernis_ausweichen, 40, 45)
     cb2.raiseSpurEvent(spur_Knopf_B)
-    dauerhaft_Knopf_B_Spurfolger()
 })
 loops.everyInterval(700, function () {
     if (btf.timeout(30000, true)) {
