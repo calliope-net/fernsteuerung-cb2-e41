@@ -94,7 +94,7 @@ btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 abstand_Knopf_A = false
 basic.forever(function () {
     cb2.raiseAbstandEvent(abstand_Knopf_A || Hindernis_ausweichen, 40, 45)
-    cb2.raiseSpurEvent(spur_Knopf_B)
+    cb2.raiseSpurEvent(spur_Knopf_B || Spur_folgen)
 })
 loops.everyInterval(700, function () {
     if (btf.timeout(30000, true)) {
