@@ -14,18 +14,6 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     cb2.fahreStrecke(192, 30, 150)
     cb2.fahreStrecke(1, 16, 20)
 })
-cb2.onAbstandEvent(function (abstand_Stop, cm) {
-    cb2.buffer_Hindernis_ausweichen(btf.btf_receivedBuffer19(), abstand_Stop)
-    cb2.event_Hindernis_ausweichen(
-    abstand_Knopf_A && !(spur_Knopf_B),
-    abstand_Stop,
-    255,
-    16,
-    64,
-    0,
-    cb2.cb2_zehntelsekunden(btf.ePause.s1)
-    )
-})
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     spur_Knopf_B = !(spur_Knopf_B)
     btf.set_timeoutDisbled(spur_Knopf_B)
@@ -45,6 +33,22 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     pins.pinDigitalWrite(pins.pins_eDigitalPins(pins.eDigitalPins.C16), !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
 })
 cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, abstand_Sensor, cm) {
+    cb2.buffer_Hindernis_ausweichen(btf.btf_receivedBuffer19(), abstand_Stop)
+    cb2.event_Hindernis_ausweichen(
+    abstand_Knopf_A && !(spur_Knopf_B),
+    abstand_Stop,
+    255,
+    16,
+    64,
+    0,
+    cb2.cb2_zehntelsekunden(btf.ePause.s1)
+    )
+    if (abstand_Stop) {
+        cb2.writecb2RgbLed(cb2.eRgbLed.lh, 0xff0000, true)
+        basic.pause(100)
+    } else {
+        cb2.writecb2RgbLed(cb2.eRgbLed.lh, 0xffff00, abstand_Sensor)
+    }
     cb2.buffer_Spur_folgen(btf.btf_receivedBuffer19(), links_hell, rechts_hell, abstand_Stop)
     cb2.event_Spur_folgen(
     spur_Knopf_B,
@@ -57,12 +61,6 @@ cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, abstand_Senso
     abstand_Stop,
     randint(5, 50)
     )
-    if (abstand_Stop) {
-        cb2.writecb2RgbLed(cb2.eRgbLed.lh, 0xff0000, true)
-        basic.pause(100)
-    } else {
-        cb2.writecb2RgbLed(cb2.eRgbLed.lh, 0xffff00, abstand_Sensor)
-    }
 })
 input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonAhold()
