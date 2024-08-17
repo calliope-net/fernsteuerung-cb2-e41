@@ -50,11 +50,11 @@ cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, abstand_Senso
     spur_Knopf_B,
     links_hell,
     rechts_hell,
-    abstand_Stop,
     192,
     160,
     31,
     0,
+    abstand_Stop,
     randint(5, 50)
     )
     if (abstand_Stop) {
