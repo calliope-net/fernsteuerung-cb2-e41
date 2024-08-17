@@ -15,7 +15,7 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     cb2.fahreStrecke(1, 16, 20)
 })
 cb2.onAbstandEvent(function (abstand_Stop, cm) {
-    cb2.buffer_Hindernis_ausweichen(Hindernis_ausweichen, abstand_Stop, btf.btf_receivedBuffer19())
+    cb2.buffer_Hindernis_ausweichen(btf.btf_receivedBuffer19(), abstand_Stop)
     cb2.event_Hindernis_ausweichen(
     abstand_Knopf_A && !(spur_Knopf_B),
     abstand_Stop,
@@ -36,8 +36,6 @@ input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function (
 btf.onReceivedDataChanged(function (receivedData, changed) {
     abstand_Knopf_A = false
     spur_Knopf_B = false
-    Spur_folgen = cb2.set_Spur_folgen(btf.btf_receivedBuffer19(), btf.e3aktiviert.mc)
-    Hindernis_ausweichen = cb2.set_Hindernis_ausweichen(btf.btf_receivedBuffer19(), btf.e3aktiviert.md)
     cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
     cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
     cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
@@ -47,7 +45,7 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     pins.pinDigitalWrite(pins.pins_eDigitalPins(pins.eDigitalPins.C16), !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
 })
 cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, cm) {
-    cb2.buffer_Spur_folgen(Spur_folgen, links_hell, rechts_hell, abstand_Stop, btf.btf_receivedBuffer19())
+    cb2.buffer_Spur_folgen(btf.btf_receivedBuffer19(), links_hell, rechts_hell, abstand_Stop)
     cb2.event_Spur_folgen(
     spur_Knopf_B,
     links_hell,
@@ -83,17 +81,14 @@ input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function (
     btf.buttonAhold()
 })
 let spur_gestartet = false
-let Spur_folgen = false
 let spur_Knopf_B = false
-let Hindernis_ausweichen = false
 let abstand_Knopf_A = false
 cb2.beimStart()
 btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
 btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 abstand_Knopf_A = false
 basic.forever(function () {
-    cb2.raiseAbstandEvent(abstand_Knopf_A || Hindernis_ausweichen, 40, 45)
-    cb2.raiseSensorEvent(spur_Knopf_B || Spur_folgen, 30, 35, 25, cb2.eI2C.x21)
+    cb2.raiseBufferEvents(btf.btf_receivedBuffer19())
 })
 loops.everyInterval(700, function () {
     if (btf.timeout(30000, true)) {
