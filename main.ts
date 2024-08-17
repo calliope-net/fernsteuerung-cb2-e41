@@ -44,7 +44,7 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     btf.zeige5x5Joystick(receivedData)
     pins.pinDigitalWrite(pins.pins_eDigitalPins(pins.eDigitalPins.C16), !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
 })
-cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, cm) {
+cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, abstand_Sensor, cm) {
     cb2.buffer_Spur_folgen(btf.btf_receivedBuffer19(), links_hell, rechts_hell, abstand_Stop)
     cb2.event_Spur_folgen(
     spur_Knopf_B,
@@ -55,8 +55,13 @@ cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, cm) {
     160,
     31,
     0,
-    abstand_Knopf_A
+    abstand_Sensor
     )
+    if (abstand_Stop) {
+        cb2.writecb2RgbLed(cb2.eRgbLed.lh, 0xff0000, true)
+    } else {
+        cb2.writecb2RgbLed(cb2.eRgbLed.lh, 0xffff00, abstand_Sensor)
+    }
 })
 input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonAhold()
@@ -68,9 +73,9 @@ btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
 btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 abstand_Knopf_A = false
 basic.forever(function () {
-    cb2.raiseBufferEvents(btf.btf_receivedBuffer19())
-    cb2.raiseSensorEvent(spur_Knopf_B, 30, 35)
-    cb2.raiseAbstandEvent(abstand_Knopf_A, 30, 35)
+    cb2.raiseBufferEvents(btf.btf_receivedBuffer19(), 5, 25, cb2.eI2C.x22)
+    cb2.raiseAbstandEvent(abstand_Knopf_A, 30, 35, 25)
+    cb2.raiseSpurEvent(spur_Knopf_B, 25, cb2.eI2C.x22)
 })
 loops.everyInterval(700, function () {
     if (btf.timeout(30000, true)) {
