@@ -54,11 +54,12 @@ cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, abstand_Senso
     192,
     160,
     31,
-    0
+    0,
+    randint(5, 50)
     )
     if (abstand_Stop) {
         cb2.writecb2RgbLed(cb2.eRgbLed.lh, 0xff0000, true)
-        basic.pause(randint(500, 5000))
+        basic.pause(100)
     } else {
         cb2.writecb2RgbLed(cb2.eRgbLed.lh, 0xffff00, abstand_Sensor)
     }
