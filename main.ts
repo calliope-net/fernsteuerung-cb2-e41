@@ -58,29 +58,9 @@ cb2.onSensorEvent(function (links_hell, rechts_hell, abstand_Stop, cm) {
     abstand_Knopf_A
     )
 })
-function dauerhaft_Knopf_B_Spurfolger () {
-    if (spur_Knopf_B) {
-        cb2.beispielSpurfolger16(
-        192,
-        160,
-        31,
-        0,
-        spur_gestartet,
-        !(abstand_Knopf_A),
-        20,
-        cb2.eI2C.x22
-        )
-        spur_gestartet = true
-    } else if (spur_gestartet) {
-        spur_Knopf_B = false
-        spur_gestartet = false
-        cb2.writeMotorenStop()
-    }
-}
 input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonAhold()
 })
-let spur_gestartet = false
 let spur_Knopf_B = false
 let abstand_Knopf_A = false
 cb2.beimStart()
@@ -89,6 +69,8 @@ btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 abstand_Knopf_A = false
 basic.forever(function () {
     cb2.raiseBufferEvents(btf.btf_receivedBuffer19())
+    cb2.raiseSensorEvent(spur_Knopf_B, 30, 35)
+    cb2.raiseAbstandEvent(abstand_Knopf_A, 30, 35)
 })
 loops.everyInterval(700, function () {
     if (btf.timeout(30000, true)) {
