@@ -40,7 +40,8 @@ input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function (
 })
 btf.onReceivedDataChanged(function (receivedData, changed) {
     if (changed) {
-        cb2.writeReset()
+        cb2.writeMotorenStop()
+        cb2.writecb2RgbLeds(0x000000, false)
     }
     Ultraschall_Sensor_Knopf_A = false
     Spur_Sensor_Knopf_B = false
@@ -86,7 +87,8 @@ loops.everyInterval(700, function () {
         control.reset()
     } else if (btf.timeout(1000)) {
         btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0xff0000, true, true)
-        cb2.writeReset()
+        cb2.writeMotorenStop()
+        cb2.writecb2RgbLeds(0x000000, false)
     } else if (btf.timeout(1000, true)) {
         btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0x00ff00)
     }
