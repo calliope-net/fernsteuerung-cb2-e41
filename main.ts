@@ -2,8 +2,8 @@ input.onButtonEvent(Button.AB, btf.buttonEventValue(ButtonEvent.Hold), function 
     btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    abstand_Knopf_A = !(abstand_Knopf_A)
-    btf.set_timeoutDisbled(abstand_Knopf_A)
+    Ultraschall_Sensor_Knopf_A = !(Ultraschall_Sensor_Knopf_A)
+    btf.set_timeoutDisbled(Ultraschall_Sensor_Knopf_A)
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     btf.set_timeoutDisbled(true)
@@ -17,7 +17,7 @@ input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
 cb2.onAbstandEvent(function (abstand_Sensor, abstand_Stop, cm) {
     cb2.buffer_Hindernis_ausweichen(btf.btf_receivedBuffer19(), abstand_Stop)
     cb2.event_Hindernis_ausweichen(
-    abstand_Knopf_A && !(spur_Knopf_B),
+    Ultraschall_Sensor_Knopf_A && !(Spur_Sensor_Knopf_B),
     abstand_Stop,
     255,
     16,
@@ -32,15 +32,18 @@ cb2.onAbstandEvent(function (abstand_Sensor, abstand_Stop, cm) {
     }
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
-    spur_Knopf_B = !(spur_Knopf_B)
-    btf.set_timeoutDisbled(spur_Knopf_B)
+    Spur_Sensor_Knopf_B = !(Spur_Sensor_Knopf_B)
+    btf.set_timeoutDisbled(Spur_Sensor_Knopf_B)
 })
 input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonBhold()
 })
 btf.onReceivedDataChanged(function (receivedData, changed) {
-    abstand_Knopf_A = false
-    spur_Knopf_B = false
+    if (changed) {
+        cb2.writeReset()
+    }
+    Ultraschall_Sensor_Knopf_A = false
+    Spur_Sensor_Knopf_B = false
     cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
     cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
     cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
@@ -52,7 +55,7 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
 cb2.onSpurEvent(function (links_hell, rechts_hell, abstand_Stop) {
     cb2.buffer_Spur_folgen(btf.btf_receivedBuffer19(), links_hell, rechts_hell, abstand_Stop)
     cb2.event_Spur_folgen(
-    spur_Knopf_B,
+    Spur_Sensor_Knopf_B,
     links_hell,
     rechts_hell,
     192,
@@ -66,16 +69,16 @@ cb2.onSpurEvent(function (links_hell, rechts_hell, abstand_Stop) {
 input.onButtonEvent(Button.A, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonAhold()
 })
-let spur_Knopf_B = false
-let abstand_Knopf_A = false
+let Spur_Sensor_Knopf_B = false
+let Ultraschall_Sensor_Knopf_A = false
 cb2.beimStart()
 btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
 btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
-abstand_Knopf_A = false
+Ultraschall_Sensor_Knopf_A = false
 basic.forever(function () {
-    cb2.raiseBufferEvents(btf.btf_receivedBuffer19(), 5, 25, cb2.eI2C.x22)
-    cb2.raiseAbstandEvent(abstand_Knopf_A, 30, 35, 25)
-    cb2.raiseSpurEvent(spur_Knopf_B, 25, cb2.eI2C.x22)
+    cb2.raiseBufferEvents(btf.btf_receivedBuffer19())
+    cb2.raiseAbstandEvent(Ultraschall_Sensor_Knopf_A, 30, 35)
+    cb2.raiseSpurEvent(Spur_Sensor_Knopf_B)
 })
 loops.everyInterval(700, function () {
     if (btf.timeout(30000, true)) {
@@ -83,6 +86,7 @@ loops.everyInterval(700, function () {
         control.reset()
     } else if (btf.timeout(1000)) {
         btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0xff0000, true, true)
+        cb2.writeReset()
     } else if (btf.timeout(1000, true)) {
         btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0x00ff00)
     }
