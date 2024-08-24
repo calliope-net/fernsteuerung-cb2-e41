@@ -83,7 +83,8 @@ btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
 btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 Ultraschall_Sensor_Knopf_A = false
 basic.forever(function () {
-    cb2.raiseBufferEvents(btf.btf_receivedBuffer19())
+    cb2.buffer_raiseAbstandEvent(btf.btf_receivedBuffer19())
+    cb2.buffer_raiseSpurEvent(btf.btf_receivedBuffer19())
     cb2.raiseAbstandEvent(Ultraschall_Sensor_Knopf_A, 30, 35)
     cb2.raiseSpurEvent(Spur_Sensor_Knopf_B)
 })
