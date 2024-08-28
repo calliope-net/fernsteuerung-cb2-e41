@@ -34,8 +34,11 @@ Die Funkgruppe wird im Flash gespeichert und beim nächsten Einschalten oder Res
   *  **A halten** (-1)
   *  **B halten** (+1)
 
-Beim Sender kann **nach** der Funkgruppe das Modell geändert werden. Das wird als Bild angezeigt. 
-Calli:Bot ist das erste Bild. 
+![](modell_callibot.png)
+
+Beim Sender kann **nach** der Funkgruppe das Modell geändert werden. Das Modell wird als Bild angezeigt. 
+Calli:Bot ist das erste Bild. Das kann mit **A geklickt** (kurz drücken) wieder eingestellt werden.
+
 
 
 
