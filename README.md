@@ -40,7 +40,9 @@ Beim Sender kann **nach** der Funkgruppe das Modell geändert werden. Das Modell
 Calli:Bot ist das erste Bild. Das Modell und die Funkgruppe werden beim Einschalten der Fernsteuerung (Sender) angezeigt.
 Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drücken) wieder eingestellt werden.
 
-
+* **A+B geklickt** startet die Bluetooth Funkverbindung. Calli:bot blinkt blau.
+* jetzt kann mit dem Joystick ferngesteuert werden
+* 
 
 
 ## Dieses Projekt bearbeiten ![Build status badge](https://github.com/calliope-net/fernsteuerung-cb2-e41/workflows/MakeCode/badge.svg)
