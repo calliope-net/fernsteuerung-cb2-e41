@@ -1,7 +1,7 @@
 
 > Diese Seite bei [https://calliope-net.github.io/fernsteuerung-cb2-e41/](https://calliope-net.github.io/fernsteuerung-cb2-e41/) öffnen
 
-### Bedienung Calli:bot 2 ohne Fernsteuerung
+### Bedienung Calli:bot 2 ohne Fernbedienung
 
 * nach dem Einschalten wird die Funkgruppe, Version und Batterie Spannung angezeigt
 
@@ -23,11 +23,11 @@
   5. Kreis nach rechts
   6. gerade zurück
 
-### Bedienung Calli:bot 2 mit Fernsteuerung
+### Bedienung Calli:bot 2 mit Fernbedienung
 
 > Bei Sender und Empfänger muss die selbe Funkgruppe eingestellt sein.
 
-Das Ändern der Funkgruppe funktioniert beim Calli:bot und der Fernsteuerung gleich mit lange Drücken (etwa 4 Sekunden).
+Das Ändern der Funkgruppe funktioniert beim Calli:bot und der Fernbedienung gleich mit lange Drücken (etwa 4 Sekunden).
 Die Funkgruppe wird im Flash gespeichert und beim nächsten Einschalten oder Reset wieder hergestellt. 
 
 * **Funkgruppe 1-8** ist die Anzahl der roten LED in den 2 linken Spalten im Display
@@ -38,16 +38,38 @@ Die Funkgruppe wird im Flash gespeichert und beim nächsten Einschalten oder Res
 ![](modell_callibot.png)
 
 Beim Sender kann **nach** der Funkgruppe das Modell geändert werden. Das Modell wird als Bild angezeigt. 
-Calli:Bot ist das erste Bild. Das Modell und die Funkgruppe werden beim Einschalten der Fernsteuerung (Sender) angezeigt.
+Calli:Bot ist das erste Bild. Das Modell und die Funkgruppe werden beim Einschalten der Fernbedienung (Sender) angezeigt.
 Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drücken) wieder eingestellt werden.
 
-* **A+B geklickt** startet die Bluetooth Funkverbindung. Calli:bot blinkt blau.
-* jetzt kann mit dem Joystick ferngesteuert werden *Funktion fahren und lenken*
+* **A+B geklickt** startet die Bluetooth Funkverbindung. Calli:Bot blinkt blau.
+* jetzt kann mit dem Joystick ferngesteuert werden *Funktion Fahren und lenken*
   * **A geklickt** schaltet Ultraschall Sensor an und aus (gelbe LED links)
   * **B geklickt** schaltet Spur Sensor an und aus (weiße LEDs)
   * **auf den Joystick drücken** hupen (nur wenn Hupe an Calli:Bot angebaut ist)
 
+* **A+B geklickt** schaltet auf die nächste *Funktion Programm fenstarten*
+  * **A geklickt** schaltet *Hindernis ausweichen* an und aus
+  * **B geklickt** schaltet *Spur folgen* an und aus
+  * funktioniert wie oben beschrieben, nur mit der Fernbedienung
+  * laufendes Programm kann jederzeit mit der Fernbedienung unterbrochen werden
+  * so kann Calli:Bot befreit werden, wenn er stecken geblieben ist, ohne ihn anzufassen
 
+* **A+B geklickt** schaltet auf die nächste *Fahren Strecke*
+  * **A geklickt** fährt 5 Strecken wie oben ohne 2. Kreis
+    * mit Fernsteuerung können nur 5 Strecken zusammen übertragen werden
+  * **B geklickt** fährt geradeaus und viertel Drehung 8 mal hintereinander
+    * mit drehen auf der Stelle soll ein Quadrat zweimal gefahren werden
+    * drehen nach Zeit ist ungenau und von der Batterie Spannung abhängig
+    * genauer geht das mit Encoder, der 450 Impulse pro Rad Umdrehung zählt
+  * *Fahren Strecke* kann nicht mit der Fernbedienung unterbrochen werden (LED grün)
+  * Strecken können mit Blöcken selbst geändert werden (beim Sender)
+
+* **A+B geklickt** schaltet zurück auf *Funktion Fahren und lenken*
+  * dabei wird zur Kontrolle kurz das Modell Bild angezeigt
+  * jetzt kann wieder mit dem Joystick ferngesteuert werden
+
+* **A+B halten** sendet Reset zum Calli:bot und seinem Calliope
+  * die Fernsteuerung ist wieder bei der Auswahl des Modells (Bilder)
 
 
 ## Dieses Projekt bearbeiten ![Build status badge](https://github.com/calliope-net/fernsteuerung-cb2-e41/workflows/MakeCode/badge.svg)
