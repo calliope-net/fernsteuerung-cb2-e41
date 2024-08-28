@@ -14,17 +14,18 @@
   * mit A kann Ultraschall Sensor dazu geschaltet werden (gelbe LED)
   * hält dann auf der Line bei Hindernis an (wenn mehrere Calli:bot fahren)
 * **A+B geklickt** fährt 6 Strecken
+  * Ultraschall Sensor aktiv, bei Hindernis Abbruch und nächste Strecke
+  * Strecken können mit Blöcken selbst geändert werden
   1. nach rechts fahren und lenken
   2. selbe Strecke zurück
   3. geradeaus
   4. Kreis nach links
   5. Kreis nach rechts
   6. gerade zurück
- * Ultraschall Sensor aktiv, bei Hindernis Abbruch und nächste Strecke
- * Strecken können mit Blöcken selbst geändert werden
 
+### Bedienung Calli:bot 2 mit Fernsteuerung
 
-
+> bei Sender (Fernsteuerung) und Empfänger (Calli:bot) muss die selbe Funkgruppe eingestellt sein
 
   * Funkgruppe 1-8 ist die Anzahl der roten LED in den 2 linken Spalten im Display
 
