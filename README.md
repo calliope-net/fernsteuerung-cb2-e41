@@ -25,9 +25,14 @@
 
 ### Bedienung Calli:bot 2 mit Fernsteuerung
 
-> bei Sender (Fernsteuerung) und Empfänger (Calli:bot) muss die selbe Funkgruppe eingestellt sein
+> bei Sender und Empfänger muss die selbe Funkgruppe eingestellt sein
 
-  * Funkgruppe 1-8 ist die Anzahl der roten LED in den 2 linken Spalten im Display
+Das Ändern der Funkgruppe funktioniert beim Calli:bot und der Fernsteuerung gleich mit lange Drücken (etwa 4 Sekunden) **A halten** (-1) und **B halten** (+1).
+Die Funkgruppe wird im Flash gespeichert und beim nächsten Einschalten oder Reset wieder hergestellt. 
+
+
+* **Funkgruppe 1-8** ist die Anzahl der roten LED in den 2 linken Spalten im Display
+  * 
 
 
 ## Dieses Projekt bearbeiten ![Build status badge](https://github.com/calliope-net/fernsteuerung-cb2-e41/workflows/MakeCode/badge.svg)
