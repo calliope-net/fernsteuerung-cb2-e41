@@ -34,6 +34,7 @@ Die Funkgruppe wird im Flash gespeichert und beim nächsten Einschalten oder Res
   *  **A halten** (-1)
   *  **B halten** (+1)
 
+![](funkgruppe_callibot.png)
 ![](modell_callibot.png)
 
 Beim Sender kann **nach** der Funkgruppe das Modell geändert werden. Das Modell wird als Bild angezeigt. 
@@ -41,8 +42,12 @@ Calli:Bot ist das erste Bild. Das Modell und die Funkgruppe werden beim Einschal
 Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drücken) wieder eingestellt werden.
 
 * **A+B geklickt** startet die Bluetooth Funkverbindung. Calli:bot blinkt blau.
-* jetzt kann mit dem Joystick ferngesteuert werden
-* 
+* jetzt kann mit dem Joystick ferngesteuert werden *Funktion fahren und lenken*
+  * **A geklickt** schaltet Ultraschall Sensor an und aus (gelbe LED links)
+  * **B geklickt** schaltet Spur Sensor an und aus (weiße LEDs)
+  * **auf den Joystick drücken** hupen (nur wenn Hupe an Calli:Bot angebaut ist)
+
+
 
 
 ## Dieses Projekt bearbeiten ![Build status badge](https://github.com/calliope-net/fernsteuerung-cb2-e41/workflows/MakeCode/badge.svg)
