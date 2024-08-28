@@ -13,6 +13,17 @@
   * fährt bis zu einer schwarzen Linie (etwa 2 cm breit) dann auf der Linie
   * mit A kann Ultraschall Sensor dazu geschaltet werden (gelbe LED)
   * hält dann auf der Line bei Hindernis an (wenn mehrere Calli:bot fahren)
+* **A+B geklickt** fährt 6 Strecken
+  1. nach rechts fahren und lenken
+  2. selbe Strecke zurück
+  3. geradeaus
+  4. Kreis nach links
+  5. Kreis nach rechts
+  6. gerade zurück
+  * Ultraschall Sensor aktiv, bei Hindernis Abbruch und nächste Strecke
+  * Strecken können mit Blöcken selbst geändert werden
+
+
 
   * Funkgruppe 1-8 ist die Anzahl der roten LED in den 2 linken Spalten im Display
 
