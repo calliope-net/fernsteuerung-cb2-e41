@@ -20,8 +20,9 @@
   4. Kreis nach links
   5. Kreis nach rechts
   6. gerade zurück
-  * Ultraschall Sensor aktiv, bei Hindernis Abbruch und nächste Strecke
-  * Strecken können mit Blöcken selbst geändert werden
+ * Ultraschall Sensor aktiv, bei Hindernis Abbruch und nächste Strecke
+ * Strecken können mit Blöcken selbst geändert werden
+
 
 
 
