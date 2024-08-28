@@ -3,17 +3,18 @@
 
 ### Bedienung Calli:bot 2 ohne Fernsteuerung
 
-* nach dem Einschalten wird die Funkgruppe, Version und Batterie Spannung angezeigt.
-  * Funkgruppe 1-8 ist die Anzahl der roten LED in den 2 linken Spalten im Display
+* nach dem Einschalten wird die Funkgruppe, Version und Batterie Spannung angezeigt
 
-* nur wenn B aus ist **A geklickt**
+* nur wenn B aus ist: **A geklickt**
   * schaltet *Hindernis ausweichen* an und aus (Ultraschall Sensor)
   * Calli:bot fährt geradeaus und lenkt vor einem Hindernis rückwärts
-* nur wenn A aus ist **B geklickt**
+* nur wenn A aus ist: **B geklickt**
   * schaltet *Spur folgen* an und aus (2 Spur Sensoren)
   * fährt bis zu einer schwarzen Linie (etwa 2 cm breit) dann auf der Linie
   * mit A kann Ultraschall Sensor dazu geschaltet werden (gelbe LED)
   * hält dann auf der Line bei Hindernis an (wenn mehrere Calli:bot fahren)
+
+  * Funkgruppe 1-8 ist die Anzahl der roten LED in den 2 linken Spalten im Display
 
 
 ## Dieses Projekt bearbeiten ![Build status badge](https://github.com/calliope-net/fernsteuerung-cb2-e41/workflows/MakeCode/badge.svg)
