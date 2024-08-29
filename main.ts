@@ -3,7 +3,7 @@ input.onButtonEvent(Button.AB, btf.buttonEventValue(ButtonEvent.Hold), function 
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     if (receiver.isFunktion(receiver.eFunktion.ng)) {
-        Stop = 40
+        Stop = 55
         receiver.setFunktion(receiver.eFunktion.hindernis_ausweichen)
     } else if (receiver.isFunktion(receiver.eFunktion.hindernis_ausweichen)) {
         receiver.setFunktion(receiver.eFunktion.ng)
@@ -13,14 +13,15 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     }
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
-    if (receiver.isFunktion(receiver.eFunktion.ng)) {
+    if (receiver.isFunktion(receiver.eFunktion.ng) || receiver.isFunktion(receiver.eFunktion.hindernis_ausweichen)) {
+        Ultraschall_Sensor_Knopf_A = receiver.isFunktion(receiver.eFunktion.hindernis_ausweichen)
         receiver.setFunktion(receiver.eFunktion.fahrplan)
-        cb2.fahreStrecke(192, 31, 40)
-        cb2.fahreStrecke(64, 31, 40)
-        cb2.fahreStrecke(255, 16, 20)
-        cb2.fahreStrecke(192, 2, 150)
-        cb2.fahreStrecke(192, 30, 150)
-        cb2.fahreStrecke(1, 16, 20)
+        cb2.fahreStrecke(192, 31, 40, Ultraschall_Sensor_Knopf_A)
+        cb2.fahreStrecke(64, 31, 40, false)
+        cb2.fahreStrecke(255, 16, 20, Ultraschall_Sensor_Knopf_A)
+        cb2.fahreStrecke(192, 2, 150, Ultraschall_Sensor_Knopf_A)
+        cb2.fahreStrecke(192, 30, 150, Ultraschall_Sensor_Knopf_A)
+        cb2.fahreStrecke(1, 16, 20, false)
         receiver.setFunktion(receiver.eFunktion.ng)
     }
 })
