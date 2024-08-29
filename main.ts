@@ -3,7 +3,9 @@ input.onButtonEvent(Button.AB, btf.buttonEventValue(ButtonEvent.Hold), function 
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     Ultraschall_Sensor_Knopf_A = !(Ultraschall_Sensor_Knopf_A)
-    btf.set_timeoutDisbled(Ultraschall_Sensor_Knopf_A)
+    if (!(Spur_Sensor_Knopf_B)) {
+        btf.set_timeoutDisbled(Ultraschall_Sensor_Knopf_A)
+    }
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     btf.set_timeoutDisbled(true)
