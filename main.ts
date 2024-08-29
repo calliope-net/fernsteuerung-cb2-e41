@@ -2,9 +2,14 @@ input.onButtonEvent(Button.AB, btf.buttonEventValue(ButtonEvent.Hold), function 
     btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 })
 input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
-    Ultraschall_Sensor_Knopf_A = !(Ultraschall_Sensor_Knopf_A)
-    if (!(Spur_Sensor_Knopf_B)) {
-        btf.set_timeoutDisbled(Ultraschall_Sensor_Knopf_A)
+    if (receiver.isFunktion(receiver.eFunktion.ng)) {
+        receiver.setFunktion(receiver.eFunktion.hindernis_ausweichen)
+        btf.set_timeoutDisbled(true)
+    } else if (receiver.isFunktion(receiver.eFunktion.hindernis_ausweichen)) {
+        receiver.setFunktion(receiver.eFunktion.ng)
+        btf.set_timeoutDisbled(false)
+    } else if (receiver.isFunktion(receiver.eFunktion.spur_folgen)) {
+        Ultraschall_Sensor_Knopf_A = !(Ultraschall_Sensor_Knopf_A)
     }
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
@@ -34,9 +39,13 @@ cb2.onAbstandEvent(function (abstand_Sensor, abstand_Stop, cm) {
     }
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
-    Spur_Sensor_Knopf_B = !(Spur_Sensor_Knopf_B)
-    Ultraschall_Sensor_Knopf_A = Spur_Sensor_Knopf_B
-    btf.set_timeoutDisbled(Spur_Sensor_Knopf_B)
+    if (receiver.isFunktion(receiver.eFunktion.ng)) {
+        receiver.setFunktion(receiver.eFunktion.spur_folgen)
+        btf.set_timeoutDisbled(true)
+    } else if (receiver.isFunktion(receiver.eFunktion.spur_folgen)) {
+        receiver.setFunktion(receiver.eFunktion.ng)
+        btf.set_timeoutDisbled(false)
+    }
 })
 input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonBhold()
