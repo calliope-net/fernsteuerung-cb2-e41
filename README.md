@@ -142,7 +142,8 @@ Ohne Encoder hängt die Länge einer Strecke u.a. von der Batterie Spannung ab u
 
 * **B geklickt** fährt geradeaus und viertel Drehung 8 mal hintereinander
   * mit drehen auf der Stelle soll ein Quadrat zweimal gefahren werden
-  * ist ohne Encoder sehr ungenau
+  * ist geeignet, um zu demonstrieren, wie ein Encoder funktioniert
+  * ist nur bei Modellen mit 2 Motoren (keine Servo Lenkung) möglich
 
 #### Fahren und Lenken
 
