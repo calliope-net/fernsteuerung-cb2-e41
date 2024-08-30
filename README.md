@@ -71,13 +71,14 @@ Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drück
 
 * **A+B geklickt** startet die Bluetooth Funkverbindung; RGB-LED blinkt blau
   * während der Verbindung zeigen Sender und Empfänger die gleichen Daten an
-  * in Joystick Ruhestellung leuchten rechts oben 2 LED (Binärzahl 16)
-  * dieser Binär-Wert wird vorwärts größer und rückwärts kleiner
+  * in Joystick Ruhestellung leuchten rechts oben 2 LED (Binärzahl 16)[1]
+  * dieser Binär-Wert wird vorwärts größer[2] und rückwärts kleiner[3]
+  * beim Lenken wird der Wert rechts größer[4] und links kleiner[5]
 
-![](png/f1m0jj.png) ![](png/j255j.png) ![](png/j1j.png)
+1![1](png/f1m0jj.png) 2![2](png/j255j.png) 3![3](png/j1j.png) 4![4](png/jj31.png) 5![5](png/jj1.png)
 
 
-* jetzt kann mit dem Joystick ferngesteuert werden *Funktion Fahren und lenken*
+* jetzt kann mit dem Joystick ferngesteuert werden *Funktion Fahren und Lenken*
   * **A geklickt** schaltet Ultraschall Sensor an und aus (gelbe LED links)
     * fährt bei Hindernis (rot) nicht mehr vorwärts; muss rückwärts fahren
   * **B geklickt** schaltet Spur Sensor an und aus (weiße LEDs)
@@ -85,12 +86,27 @@ Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drück
     * hier kann aber auch auf die Funktion *Spur folgen* umgeschaltet werden
   * **auf den Joystick drücken** hupen (nur wenn Hupe an Calli:Bot angebaut ist)
 
-* **A+B geklickt** schaltet auf die nächste *Funktion Programm fenstarten*
-  * **A geklickt** schaltet *Hindernis ausweichen* an und aus
-  * **B geklickt** schaltet *Spur folgen* an und aus
+* **A+B geklickt** schaltet auf die nächste *Betriebsart 10 Programm fenstarten*
+
+#### 10 Programm fenstarten
+
+![](png/b10.png) 
+
+  * nur wenn B aus ist: **A geklickt**
+    * schaltet *Hindernis ausweichen* an und aus (Ultraschall Sensor)
+    * Calli:bot fährt geradeaus und lenkt vor einem Hindernis rückwärts
+  * nur wenn A aus ist: **B geklickt**
+    * schaltet *Spur folgen* an und aus (2 Spur Sensoren)
+    * fährt bis zu einer schwarzen Linie (etwa 2 cm breit) dann auf der Linie
+    * mit A kann Ultraschall Sensor dazu geschaltet werden (gelbe LED)
+    * hält dann auf der Line bei Hindernis an (wenn mehrere Calli:bot fahren)
   * funktioniert wie oben beschrieben, nur mit der Fernbedienung
   * laufendes Programm kann jederzeit mit der Fernbedienung unterbrochen werden
   * so kann Calli:Bot befreit werden, wenn er stecken geblieben ist, ohne ihn anzufassen
+
+#### 20 Strecke senden
+
+![](png/b20.png) 
 
 * **A+B geklickt** schaltet auf die nächste *Fahren Strecke*
   * **A geklickt** fährt 5 Strecken wie oben ohne 2. Kreis
