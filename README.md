@@ -17,7 +17,7 @@
   * fährt bis zu einer schwarzen Linie (etwa 2 cm breit) dann auf der Linie
   * mit A kann Ultraschall Sensor dazu geschaltet werden (gelbe LED)
   * hält dann auf der Line bei Hindernis an (wenn mehrere Calli:bot fahren)
-* **A+B geklickt** fährt 6 Strecken
+* **A+B geklickt** fährt 6 Strecken (mit Encoder zentimetergenau)
   * wenn A und B aus war: Ultraschall Sensor nicht aktiv
   * wenn *Hindernis ausweichen* gestartet war: Ultraschall Sensor aktiv
     * bei Hindernis Abbruch und weiter mit der nächsten Strecke
