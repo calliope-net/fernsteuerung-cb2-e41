@@ -28,16 +28,17 @@
   6. gerade zurück
 * **RGB-LED** (Calliope)
   * rot blinken: wartet auf Bluetooth Verbindung
-  * grün: lokales Programm gestartet mit **A geklickt**, **B geklickt**
+  * grün: lokales Programm gestartet mit **A geklickt** **B geklickt** **A+B geklickt**
   * blau blinken: Fernbedienung mit gleicher Funkgruppe verbunden
 * **Timeout**
   * rot blinken: nach 30 Sekunden *zurücksetzen*
   * grün: nach 30 Sekunden ohne Sensor-Ereignis *zurücksetzen*
-  * blau blinken: wenn online kein Timeout
+  * blau blinken: kein Timeout (Calli:bot ist ferngesteuert)
   * aus schalten per Software wird beim Calli:bot nicht unterstützt
   * *zurücksetzen* kann auch von der Fernbedienung gesendet werden
 
-> 
+> Timeout sorgt dafür, dass Calli:bot stehen bleibt wenn beim fernsteuern die Bluetooth Verbindung unterbrochen ist
+> oder wenn er beim alleine fahren stecken bleibt.
 
 ### Bedienung Calli:bot 2 mit Fernbedienung
 
