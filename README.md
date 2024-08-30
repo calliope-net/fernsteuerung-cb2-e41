@@ -69,7 +69,7 @@ Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drück
 > Sind mehrere Fernbedienungen im Einsatz, reagiert ein Calli:bot immer nur auf die Fernbedienung, die zuerst da war.
 > (Von der das erste Bluetooth Datenpaket empfangen wurde.) Nach Reset wird neu entschieden.
 
-#### 00 Fahren und Lenken - eine Fernbedienung mit Joystick - ein Modell
+#### Fahren und Lenken - eine Fernbedienung mit Joystick - ein Modell
 
 ![](png/b00.png) 
 
@@ -91,7 +91,7 @@ In der Betriebsart *Fahren und Lenken* ist immer eine Fernbedienung mit Joystick
     * hier kann aber auch auf die Funktion *Spur folgen* umgeschaltet werden
   * **auf den Joystick drücken** hupen (nur wenn Hupe an Calli:Bot angebaut ist)
 
-#### 10 Programm fernstarten - eine Fernbedienung - mehrere (verschiedene) Modelle
+#### Programm fernstarten - eine Fernbedienung - mehrere (verschiedene) Modelle
 
 ![](png/b10.png) 
 
@@ -119,7 +119,7 @@ Den Zustand jedes Modells hat sich die Fernbedienung gemerkt, so dass dieses wei
   * mit **A geklickt** kann Ultraschall Sensor dazu geschaltet werden (gelbe LED)
   * hält dann auf der Line bei Hindernis an (wenn mehrere Calli:bot fahren)
 
-#### 20 Strecken senden - 5 Teilstrecken: (Fahren, Lenken, Länge)
+#### Strecken senden - 5 Teilstrecken: (Fahren, Lenken, Länge)
 
 ![](png/b20.png) 
 
@@ -144,7 +144,7 @@ Ohne Encoder hängt die Länge einer Strecke u.a. von der Batterie Spannung ab u
   * mit drehen auf der Stelle soll ein Quadrat zweimal gefahren werden
   * ist ohne Encoder sehr ungenau
 
-#### 00 Fahren und Lenken
+#### Fahren und Lenken
 
 ![](png/b00.png) 
 
