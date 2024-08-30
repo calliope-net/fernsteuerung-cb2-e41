@@ -32,7 +32,7 @@
   5. Kreis nach rechts
   6. gerade zurück
 * **RGB-LED** (Calliope)
-  * rot blinken: wartet auf Bluetooth Verbindung
+  * rot blinken: keine Bluetooth Verbindung
   * grün: lokales Programm gestartet mit **A geklickt** **B geklickt** **A+B geklickt**
   * blau blinken: Fernbedienung mit gleicher Funkgruppe verbunden
 * **Timeout**
