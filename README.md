@@ -69,7 +69,7 @@ Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drück
 > Sind mehrere Fernbedienungen im Einsatz, reagiert ein Calli:bot immer nur auf die Fernbedienung, die zuerst da war.
 > (Von der das erste Bluetooth Datenpaket empfangen wurde.) Nach Reset wird neu entschieden.
 
-#### 00 Fahren und Lenken (eine Fernbedienung mit Joystick - ein Modell)
+#### 00 Fahren und Lenken - eine Fernbedienung mit Joystick - ein Modell
 
 ![](png/b00.png) 
 
@@ -91,7 +91,7 @@ In der Betriebsart *Fahren und Lenken* ist immer eine Fernbedienung mit Joystick
     * hier kann aber auch auf die Funktion *Spur folgen* umgeschaltet werden
   * **auf den Joystick drücken** hupen (nur wenn Hupe an Calli:Bot angebaut ist)
 
-#### 10 Programm fernstarten (eine Fernbedienung - mehrere verschiedene Modelle)
+#### 10 Programm fernstarten - eine Fernbedienung - mehrere (verschiedene) Modelle
 
 ![](png/b10.png) 
 
@@ -116,10 +116,10 @@ Den Zustand jedes Modells hat sich die Fernbedienung gemerkt, so dass dieses wei
 * nur wenn A aus ist: **B geklickt**
   * schaltet Programm *Spur folgen* an und aus (2 Spur Sensoren)
   * fährt bis zu einer schwarzen Linie (etwa 2 cm breit) dann auf der Linie
-  * mit A kann Ultraschall Sensor dazu geschaltet werden (gelbe LED)
+  * mit **A geklickt** kann Ultraschall Sensor dazu geschaltet werden (gelbe LED)
   * hält dann auf der Line bei Hindernis an (wenn mehrere Calli:bot fahren)
 
-#### 20 Strecken senden (5 Teilstrecken: Fahren, Lenken und Länge)
+#### 20 Strecken senden - 5 Teilstrecken: (Fahren, Lenken, Länge)
 
 ![](png/b20.png) 
 
@@ -131,14 +131,17 @@ Nur der Ultraschall Sensor kann eine Strecke abbrechen, wenn ein Hindernis im We
 
 wird der Joystick nicht benutzt. 
 
-  * **A geklickt** fährt 5 Strecken wie oben ohne 2. Kreis
-    * mit Fernsteuerung können nur 5 Strecken zusammen übertragen werden
-  * **B geklickt** fährt geradeaus und viertel Drehung 8 mal hintereinander
-    * mit drehen auf der Stelle soll ein Quadrat zweimal gefahren werden
-    * drehen nach Zeit ist ungenau und von der Batterie Spannung abhängig
-    * genauer geht das mit Encoder, der 450 Impulse pro Rad Umdrehung zählt
-  * *Fahren Strecke* kann nicht mit der Fernbedienung unterbrochen werden (LED grün)
-  * Strecken können mit Blöcken selbst geändert werden (beim Sender)
+* **A geklickt** fährt 5 Strecken
+  1. nach rechts fahren und lenken
+  2. die selbe Strecke zurück
+  3. geradeaus
+  4. Kreis nach links
+  5. gerade zurück
+
+* **B geklickt** fährt geradeaus und viertel Drehung 8 mal hintereinander
+  * mit drehen auf der Stelle soll ein Quadrat zweimal gefahren werden
+  * drehen nach Zeit ist ungenau und von der Batterie Spannung abhängig
+  * genauer geht das mit Encoder, der 450 Impulse pro Rad Umdrehung zählt
 
 #### 00 Fahren und Lenken
 
