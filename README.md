@@ -71,6 +71,12 @@ Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drück
 
 * **A+B geklickt** startet die Bluetooth Funkverbindung; RGB-LED blinkt blau
   * während der Verbindung zeigen Sender und Empfänger die gleichen Daten an
+  * in Joystick Ruhestellung leuchten rechts oben 2 LED (Binärzahl 16)
+  * 
+
+![](png/f1m0jj.png) ![](png/j255j.png) ![](png/j1j.png)
+
+
 * jetzt kann mit dem Joystick ferngesteuert werden *Funktion Fahren und lenken*
   * **A geklickt** schaltet Ultraschall Sensor an und aus (gelbe LED links)
     * fährt bei Hindernis (rot) nicht mehr vorwärts; muss rückwärts fahren
