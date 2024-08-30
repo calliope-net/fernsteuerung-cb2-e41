@@ -95,7 +95,7 @@ In der Betriebsart *Fahren und Lenken* ist immer eine Fernbedienung mit Joystick
 
 ![](png/b10.png) 
 
-* **A+B geklickt** schaltet auf die *Betriebsart 10 Programm fernstarten*
+* **A+B geklickt** schaltet auf *Programm fernstarten*
 
 In der Betriebsart *Programm fernstarten* wird der Joystick nicht benutzt. Es ist aber sinnvoll das Modell vorher mit *Fahren und Lenken* an die
 Position zu fahren, wo das Programm gestartet werden soll. 
@@ -123,7 +123,7 @@ Den Zustand jedes Modells hat sich die Fernbedienung gemerkt, so dass dieses wei
 
 ![](png/b20.png) 
 
-* **A+B geklickt** schaltet auf die nächste *Fahren Strecke*
+* **A+B geklickt** schaltet auf *Strecke senden*
   * **A geklickt** fährt 5 Strecken wie oben ohne 2. Kreis
     * mit Fernsteuerung können nur 5 Strecken zusammen übertragen werden
   * **B geklickt** fährt geradeaus und viertel Drehung 8 mal hintereinander
@@ -133,9 +133,15 @@ Den Zustand jedes Modells hat sich die Fernbedienung gemerkt, so dass dieses wei
   * *Fahren Strecke* kann nicht mit der Fernbedienung unterbrochen werden (LED grün)
   * Strecken können mit Blöcken selbst geändert werden (beim Sender)
 
-* **A+B geklickt** schaltet zurück auf *Funktion Fahren und lenken*
+#### 00 Fahren und Lenken
+
+![](png/b00.png) 
+
+* **A+B geklickt** schaltet zurück auf *Fahren und lenken*
   * dabei wird zur Kontrolle kurz das Modell Bild angezeigt
   * jetzt kann wieder mit dem Joystick ferngesteuert werden
+
+#### Reset zum Modell senden
 
 * **A+B halten** sendet Reset zum Calli:bot und seinem Calliope
   * die Fernsteuerung ist wieder bei der Auswahl des Modells (Bilder)
