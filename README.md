@@ -1,7 +1,7 @@
 
 > Diese Seite bei [https://calliope-net.github.io/fernsteuerung-cb2-e41/](https://calliope-net.github.io/fernsteuerung-cb2-e41/) öffnen.
 
-### Bedienung Calli:bot 2 ohne Fernbedienung
+### Calli:bot 2 ohne Fernbedienung
 
 * nach dem Einschalten wird die Funkgruppe, Typ und Batterie Spannung angezeigt
 * Beispiel 1: Funkgruppe 1; Typ 4 (Calli:bot 2 ohne Encoder); 3,8 Volt
@@ -45,7 +45,7 @@
 > Timeout sorgt dafür, dass Calli:bot stehen bleibt wenn beim fernsteuern die Bluetooth Verbindung unterbrochen ist
 > oder wenn er beim alleine fahren stecken bleibt.
 
-### Bedienung Calli:bot 2 mit Fernbedienung
+### Calli:bot 2 mit Fernbedienung
 
 > Bei Sender und Empfänger muss die selbe Funkgruppe eingestellt sein.
 
@@ -155,7 +155,7 @@ Ohne Encoder hängt die Länge einer Strecke u.a. von der Batterie Spannung ab u
 #### Reset zum Modell senden
 
 * **A+B halten** sendet Reset zum Calli:bot und seinem Calliope
-  * die Fernsteuerung ist wieder bei der Auswahl des Modells (Bilder)
+  * die Fernbedienung ist wieder bei der Auswahl des Modells (Bilder)
 
 
 ## Dieses Projekt bearbeiten ![Build status badge](https://github.com/calliope-net/fernsteuerung-cb2-e41/workflows/MakeCode/badge.svg)
