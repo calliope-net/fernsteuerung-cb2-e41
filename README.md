@@ -3,7 +3,10 @@
 
 ### Bedienung Calli:bot 2 ohne Fernbedienung
 
-* nach dem Einschalten wird die Funkgruppe, Version und Batterie Spannung angezeigt
+* nach dem Einschalten wird die Funkgruppe, Typ und Batterie Spannung angezeigt
+* Funkgruppe 1; Typ 4 (Calli:bot 2 ohne Encoder); 3,8 Volt
+
+![](png/f1_cb2a_v38.png)
 
 * nur wenn B aus ist: **A geklickt**
   * schaltet *Hindernis ausweichen* an und aus (Ultraschall Sensor)
