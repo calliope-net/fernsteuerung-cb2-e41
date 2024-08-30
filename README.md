@@ -104,7 +104,7 @@ Die Programme *Hindernis ausweichen* oder *Spur folgen* werden mit der Fernbedie
 bis sie wieder mit der Fernbedienung beendet werden.
 
 Die Fernbedienung kann die Funkgruppe ändern und den nächsten Call:bot (oder ein anderes Modell) fernsteuern.
-Währenddessen fahren die gestarteten Modelle allein weiter (leuchten grün). Die Funkgruppe kann jederzeit auf ein Modell zurück geschaltet werden.
+Währenddessen fahren die gestarteten Modelle allein weiter (RGB-LED grün). Die Funkgruppe kann jederzeit auf ein Modell zurück geschaltet werden.
 Den Zustand jedes Modells hat sich die Fernbedienung gemerkt, so dass dieses weiter fährt, blau blinkt und mit den Tasten gesteuert werden kann.
 
 > Um ein stecken gebliebenes Modell mit dem Joystick zu fahren, kann jederzeit auf *Fahren und Lenken* umgeschaltet werden. Mehrere Modelle,
@@ -129,7 +129,9 @@ Es ist sinnvoll das Modell vorher mit *Fahren und Lenken* an die Position zu fah
 In der Betriebsart *Strecken senden* werden maximal 5 Strecken nacheinander abgefahren und können mit der Fernbedienung nicht unterbrochen werden.
 Nur der Ultraschall Sensor kann eine Strecke abbrechen, wenn ein Hindernis im Weg ist.
 
-wird der Joystick nicht benutzt. 
+Auf vielen Calliope (Klassensatz) ohne Joystick können mit Blöcken die Strecken programmiert, und dann einzeln zu einem Modell gesendet werden.
+Die Länge wird mit Encoder in Zentimeter und ohne Encoder in Zehntelsekunden gemessen. 
+Ohne Encoder hängt die Länge einer Strecke u.a. von der Batterie Spannung ab und ist sehr ungenau.
 
 * **A geklickt** fährt 5 Strecken
   1. nach rechts fahren und lenken
@@ -140,8 +142,7 @@ wird der Joystick nicht benutzt.
 
 * **B geklickt** fährt geradeaus und viertel Drehung 8 mal hintereinander
   * mit drehen auf der Stelle soll ein Quadrat zweimal gefahren werden
-  * drehen nach Zeit ist ungenau und von der Batterie Spannung abhängig
-  * genauer geht das mit Encoder, der 450 Impulse pro Rad Umdrehung zählt
+  * ist ohne Encoder sehr ungenau
 
 #### 00 Fahren und Lenken
 
