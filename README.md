@@ -28,8 +28,16 @@
   6. gerade zurück
 * **RGB-LED** (Calliope)
   * rot blinken: wartet auf Bluetooth Verbindung
-  * blau blinken: Fernbedienung mit gleicher Funkgruppe verbunden
   * grün: lokales Programm gestartet mit **A geklickt**, **B geklickt**
+  * blau blinken: Fernbedienung mit gleicher Funkgruppe verbunden
+* **Timeout**
+  * rot blinken: nach 30 Sekunden *zurücksetzen*
+  * grün: nach 30 Sekunden ohne Sensor-Ereignis *zurücksetzen*
+  * blau blinken: wenn online kein Timeout
+  * aus schalten per Software wird beim Calli:bot nicht unterstützt
+  * *zurücksetzen* kann auch von der Fernbedienung gesendet werden
+
+> 
 
 ### Bedienung Calli:bot 2 mit Fernbedienung
 
