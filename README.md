@@ -4,7 +4,7 @@
 ### Bedienung Calli:bot 2 ohne Fernbedienung
 
 * nach dem Einschalten wird die Funkgruppe, Typ und Batterie Spannung angezeigt
-* Funkgruppe 1; Typ 4 (Calli:bot 2 ohne Encoder); 3,8 Volt
+* Beispiel: Funkgruppe 1; Typ 4 (Calli:bot 2 ohne Encoder); 3,8 Volt
 
 ![](png/f1_cb2a_v38.png)
 
@@ -25,6 +25,10 @@
   4. Kreis nach links
   5. Kreis nach rechts
   6. gerade zurück
+* **RGB-LED** (Calliope)
+  * rot blinken: wartet auf Bluetooth Verbindung
+  * blau blinken: Fernbedienung mit gleicher Funkgruppe verbunden
+  * grün: lokales Programm gestartet mit **A geklickt**, **B geklickt**
 
 ### Bedienung Calli:bot 2 mit Fernbedienung
 
