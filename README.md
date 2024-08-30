@@ -36,14 +36,10 @@ Die Funkgruppe wird im Flash gespeichert und beim nächsten Einschalten oder Res
 
 ![](png/f1.png) ![](png/f2.png) ![](png/f3.png) ![](png/f4.png) ![](png/f5.png) ![](png/f6.png) ![](png/f7.png) ![](png/f8.png)
 
-
-
-
-
-![](funkgruppe_callibot.png)
-![](modell_callibot.png)
-
 Beim Sender kann **nach** der Funkgruppe das Modell geändert werden. Das Modell wird als Bild angezeigt. 
+
+![](png/m_callibot.png) ![](png/m_sensoren.png) ![](png/m_gabelstapler.png) ![](png/m_kran.png) ![](png/m_car4.png)
+
 Calli:Bot ist das erste Bild. Das Modell und die Funkgruppe werden beim Einschalten der Fernbedienung (Sender) angezeigt.
 Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drücken) wieder eingestellt werden.
 
