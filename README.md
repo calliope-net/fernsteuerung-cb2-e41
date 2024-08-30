@@ -34,6 +34,12 @@ Die Funkgruppe wird im Flash gespeichert und beim nächsten Einschalten oder Res
   *  **A halten** (-1)
   *  **B halten** (+1)
 
+![](png/f1.png) ![](png/f2.png) ![](png/f3.png) ![](png/f4.png) ![](png/f5.png) ![](png/f6.png) ![](png/f7.png) ![](png/f8.png)
+
+
+
+
+
 ![](funkgruppe_callibot.png)
 ![](modell_callibot.png)
 
