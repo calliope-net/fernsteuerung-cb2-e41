@@ -24,7 +24,7 @@
   * Strecken können mit Blöcken selbst programmiert werden
   * die Länge wird mit Encoder in cm und ohne Encoder in Zehntelsekunden angegeben
   1. nach rechts fahren und lenken
-  2. selbe Strecke zurück
+  2. die selbe Strecke zurück
   3. geradeaus
   4. Kreis nach links
   5. Kreis nach rechts
