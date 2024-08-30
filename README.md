@@ -20,8 +20,8 @@
 * **A+B geklickt** fährt 6 Strecken
   * wenn A und B aus war: Ultraschall Sensor nicht aktiv
   * wenn *Hindernis ausweichen* gestartet war: Ultraschall Sensor aktiv
-    * bei Hindernis Abbruch und nächste Strecke
-  * Strecken können mit Blöcken selbst geändert werden
+    * bei Hindernis Abbruch und weiter mit der nächsten Strecke
+  * Strecken können mit Blöcken selbst programmiert werden
   1. nach rechts fahren und lenken
   2. selbe Strecke zurück
   3. geradeaus
