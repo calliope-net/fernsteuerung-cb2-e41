@@ -69,10 +69,14 @@ Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drück
 > Sind mehrere Fernbedienungen im Einsatz, reagiert ein Calli:bot immer nur auf die Fernbedienung, die zuerst da war.
 > (Von der das erste Bluetooth Datenpaket empfangen wurde. Nach Reset wird neu entschieden.)
 
-* **A+B geklickt** startet die Bluetooth Funkverbindung. Calli:Bot blinkt blau.
+* **A+B geklickt** startet die Bluetooth Funkverbindung; RGB-LED blinkt blau
+  * während der Verbindung zeigen Sender und Empfänger die gleichen Daten an
 * jetzt kann mit dem Joystick ferngesteuert werden *Funktion Fahren und lenken*
   * **A geklickt** schaltet Ultraschall Sensor an und aus (gelbe LED links)
+    * fährt bei Hindernis (rot) nicht mehr vorwärts; muss rückwärts fahren
   * **B geklickt** schaltet Spur Sensor an und aus (weiße LEDs)
+    * bleibt auf einer schwarzen Linie stehen; aus schalten mit **B geklickt**
+    * hier kann aber auch auf die Funktion *Spur folgen* umgeschaltet werden
   * **auf den Joystick drücken** hupen (nur wenn Hupe an Calli:Bot angebaut ist)
 
 * **A+B geklickt** schaltet auf die nächste *Funktion Programm fenstarten*
