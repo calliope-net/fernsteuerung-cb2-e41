@@ -69,6 +69,12 @@ Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drück
 > Sind mehrere Fernbedienungen im Einsatz, reagiert ein Calli:bot immer nur auf die Fernbedienung, die zuerst da war.
 > (Von der das erste Bluetooth Datenpaket empfangen wurde.) Nach Reset wird neu entschieden.
 
+#### 00 Fahren und Lenken
+
+![](png/b00.png) 
+
+In der Betriebsart *Fahren und Lenken* ist immer eine Fernbedienung mit Joystick erforderlich und eine aktive Bluetooth Funkverbindung.
+
 * **A+B geklickt** startet die Bluetooth Funkverbindung; RGB-LED blinkt blau
   * während der Verbindung zeigen Sender und Empfänger die gleichen Daten an
   * in Joystick Ruhestellung leuchten rechts oben 2 LED (Binärzahl 16)[1]
@@ -77,8 +83,7 @@ Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drück
 
 1![1](png/f1m0jj.png) 2![2](png/j255j.png) 3![3](png/j1j.png) 4![4](png/jj31.png) 5![5](png/jj1.png)
 
-
-* jetzt kann mit dem Joystick ferngesteuert werden *Funktion Fahren und Lenken*
+* jetzt kann mit dem Joystick ferngesteuert werden *Fahren und Lenken*
   * **A geklickt** schaltet Ultraschall Sensor an und aus (gelbe LED links)
     * fährt bei Hindernis (rot) nicht mehr vorwärts; muss rückwärts fahren
   * **B geklickt** schaltet Spur Sensor an und aus (weiße LEDs)
@@ -86,11 +91,20 @@ Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drück
     * hier kann aber auch auf die Funktion *Spur folgen* umgeschaltet werden
   * **auf den Joystick drücken** hupen (nur wenn Hupe an Calli:Bot angebaut ist)
 
-* **A+B geklickt** schaltet auf die nächste *Betriebsart 10 Programm fenstarten*
-
 #### 10 Programm fenstarten
 
 ![](png/b10.png) 
+
+In der Betriebsart *Programm fernstarten* wird der Joystick nicht benutzt. 
+Die Programme *Hindernis ausweichen* oder *Spur folgen* werden mit der Fernbedienung auf dem verbundenen Calli:bot gestartet.
+Dann kann die Fernbedienung die Funkgruppe ändern und den nächsten Call:bot (oder ein anderes Modell) fernsteuern.
+Währenddessen fahren die gestarteten Modelle allein weiter. Die Funkgruppe kann jederzeit auf ein Modell zurück geschaltet werden.
+Den Zustand jedes Modells hat sich die Fernbedienung gemerkt, so dass dieses weiter fährt, blau blinkt und mit den Tasten gesteuert werden kann.
+
+> Um ein stecken gebliebenes Modell mit dem Joystick zu fahren, kann jederzeit auf *Fahren und Lenken* umgeschaltet werden. Mehrere Modelle,
+> nicht nur Calli:bot, können ohne sie anzufassen mit einer einzigen Fernbedinung gesteuert werden.
+
+* **A+B geklickt** schaltet auf die nächste *Betriebsart 10 Programm fernstarten*
 
   * nur wenn B aus ist: **A geklickt**
     * schaltet *Hindernis ausweichen* an und aus (Ultraschall Sensor)
