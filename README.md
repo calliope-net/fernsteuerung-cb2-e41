@@ -33,7 +33,7 @@
   6. gerade zurück
 * **RGB-LED** (Calliope)
   * rot blinken: keine Bluetooth Verbindung
-  * grün: lokales Programm gestartet mit **A geklickt** **B geklickt** **A+B geklickt**
+  * grün: lokales Programm gestartet mit **A geklickt**, **B geklickt**, **A+B geklickt**
   * blau blinken: Fernbedienung mit gleicher Funkgruppe verbunden
 * **Timeout**
   * rot blinken: nach 30 Sekunden *zurücksetzen*
