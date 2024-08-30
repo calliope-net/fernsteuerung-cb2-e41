@@ -22,8 +22,8 @@
   * wenn A und B aus war: Ultraschall Sensor nicht aktiv
   * wenn *Hindernis ausweichen* gestartet war: Ultraschall Sensor aktiv
     * bei Hindernis Abbruch und weiter mit der nächsten Strecke
-  * Strecken können mit Blöcken selbst programmiert werden
   * endet, wenn alle Strecken gefahren sind; kann nur mit Reset unterbrochen werden
+  * Strecken können mit Blöcken selbst programmiert werden
   * die Länge wird mit Encoder in cm und ohne Encoder in Zehntelsekunden angegeben
   1. nach rechts fahren und lenken
   2. die selbe Strecke zurück
