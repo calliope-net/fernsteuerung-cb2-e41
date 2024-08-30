@@ -67,7 +67,7 @@ Calli:Bot ist das erste Bild. Das Modell und die Funkgruppe werden beim Einschal
 Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drücken) wieder eingestellt werden.
 
 > Sind mehrere Fernbedienungen im Einsatz, reagiert ein Calli:bot immer nur auf die Fernbedienung, die zuerst da war.
-> (Von der das erste Bluetooth Datenpaket empfangen wurde. Nach Reset wird neu entschieden.)
+> (Von der das erste Bluetooth Datenpaket empfangen wurde.) Nach Reset wird neu entschieden.
 
 * **A+B geklickt** startet die Bluetooth Funkverbindung; RGB-LED blinkt blau
   * während der Verbindung zeigen Sender und Empfänger die gleichen Daten an
