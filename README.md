@@ -21,7 +21,7 @@
   * fährt 6 Strecken (mit Encoder zentimetergenau)
   * wenn A und B aus war: Ultraschall Sensor nicht aktiv
   * wenn *Hindernis ausweichen* gestartet war: Ultraschall Sensor aktiv
-    * bei Hindernis Abbruch und weiter mit der nächsten Strecke
+    * bei Hindernis: Abbruch und weiter mit der nächsten Strecke
   * endet, wenn alle Strecken gefahren sind; kann nur mit Reset unterbrochen werden
   * Strecken können mit Blöcken selbst programmiert werden
   * die Länge wird mit Encoder in cm und ohne Encoder in Zehntelsekunden angegeben
@@ -49,8 +49,8 @@
 
 > Bei Sender und Empfänger muss die selbe Funkgruppe eingestellt sein.
 
-Das Ändern der Funkgruppe funktioniert beim Calli:bot und der Fernbedienung gleich mit lange Drücken (etwa 4 Sekunden).
-Die Funkgruppe wird im Flash gespeichert und beim nächsten Einschalten oder Reset wieder hergestellt. 
+Das Ändern der Funkgruppe funktioniert beim Calli:bot und der Fernbedienung gleich. **Knopf A** oder **Knopf B** muss so lange gedrückt werden, 
+bis sich die Anzeige ändert (etwa 4 Sekunden). Ändern der Funkgruppe ist in jedem Zustand möglich.
 
 * **Funkgruppe 1-8** ist die Anzahl der roten LED in den 2 linken Spalten im Display
   *  **A halten** (-1)
@@ -63,7 +63,7 @@ Das Modell wird als Bild angezeigt.
 
 ![](png/m_callibot.png) ![](png/m_sensoren.png) ![](png/m_gabelstapler.png) ![](png/m_kran.png) ![](png/m_car4.png)
 
-Calli:Bot ist das erste Bild. Das Modell und die Funkgruppe werden beim Einschalten der Fernbedienung (Sender) angezeigt.
+Calli:Bot ist das erste Bild. Das Modell und die Funkgruppe werden beim Einschalten der Fernbedienung (Sender) aus dem Flash wieder hergestellt und angezeigt.
 Wird nicht das Calli:bot Bild angezeigt, kann es mit **A geklickt** (kurz drücken) wieder eingestellt werden.
 
 > Sind mehrere Fernbedienungen im Einsatz, reagiert ein Calli:bot immer nur auf die Fernbedienung, die zuerst da war.
