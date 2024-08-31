@@ -95,9 +95,9 @@ In der Betriebsart *Fahren und Lenken* ist immer eine Fernbedienung mit Joystick
 
 ![](png/b10.png) 
 
-* **A+B geklickt** schaltet auf *Programm fernstarten*
-
 Es ist sinnvoll das Modell vorher mit *Fahren und Lenken* an die Position zu fahren, wo das Programm gestartet werden soll. 
+
+* **A+B geklickt** schaltet auf *Programm fernstarten*
 
 In der Betriebsart *Programm fernstarten* wird der Joystick nicht benutzt. 
 
@@ -124,9 +124,9 @@ Den Zustand jedes Modells hat sich die Fernbedienung gemerkt, so dass dieses wei
 
 ![](png/b20.png) 
 
-* **A+B geklickt** schaltet auf *Strecken senden*
-
 Es ist sinnvoll das Modell vorher mit *Fahren und Lenken* an die Position zu fahren, wo es dann los fahren soll. 
+
+* **A+B geklickt** schaltet auf *Strecken senden*
 
 In der Betriebsart *Strecken senden* werden maximal 5 Strecken nacheinander abgefahren und können mit der Fernbedienung nicht unterbrochen werden.
 Nur der Ultraschall Sensor kann eine Strecke abbrechen, wenn ein Hindernis im Weg ist.
