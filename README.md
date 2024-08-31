@@ -98,6 +98,7 @@ In der Betriebsart *Fahren und Lenken* ist immer eine Fernbedienung mit Joystick
 * **A+B geklickt** schaltet auf *Programm fernstarten*
 
 Es ist sinnvoll das Modell vorher mit *Fahren und Lenken* an die Position zu fahren, wo das Programm gestartet werden soll. 
+
 In der Betriebsart *Programm fernstarten* wird der Joystick nicht benutzt. 
 
 Die Programme *Hindernis ausweichen* oder *Spur folgen* werden mit der Fernbedienung auf dem verbundenen Calli:bot gestartet und laufen dann dauerhaft weiter,
@@ -126,6 +127,7 @@ Den Zustand jedes Modells hat sich die Fernbedienung gemerkt, so dass dieses wei
 * **A+B geklickt** schaltet auf *Strecken senden*
 
 Es ist sinnvoll das Modell vorher mit *Fahren und Lenken* an die Position zu fahren, wo es dann los fahren soll. 
+
 In der Betriebsart *Strecken senden* werden maximal 5 Strecken nacheinander abgefahren und können mit der Fernbedienung nicht unterbrochen werden.
 Nur der Ultraschall Sensor kann eine Strecke abbrechen, wenn ein Hindernis im Weg ist.
 
