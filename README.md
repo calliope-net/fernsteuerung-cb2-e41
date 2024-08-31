@@ -4,10 +4,10 @@
 ### Hardware
 
 * **[Calli:bot 2](https://shop.knotech.de/calli-bot/244/calli-bot-2)** oder **[Calli:bot 2E](https://shop.knotech.de/calli-bot/hilfe/beispiele/248/calli-bot-2e)** mit **Calliope mini** v1 oder v2
-  * MakeCode Projekt: **calliope-net/fernsteuerung-cb2-e41**
+  * MakeCode Projekt: **[calliope-net/fernsteuerung-cb2-e41](https://calliope-net.github.io/fernsteuerung-cb2-e41/)**
 * Fernbedienung: **Calliope mini** v1 oder v2
   * optional [SparkFun Qwiic Joystick](https://www.sparkfun.com/products/15168)
-  * MakeCode Projekt: **calliope-net/fernsteuerung-s41**
+  * MakeCode Projekt: **[calliope-net/fernsteuerung-s61](https://calliope-net.github.io/fernsteuerung-s61/)**
 
 ### Calli:bot 2 ohne Fernbedienung
 
