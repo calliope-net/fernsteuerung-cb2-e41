@@ -86,7 +86,7 @@ In der Betriebsart *Fahren und Lenken* ist immer eine Fernbedienung mit Joystick
 * jetzt kann mit dem Joystick ferngesteuert werden *Fahren und Lenken*
   * **A geklickt** schaltet Ultraschall Sensor an und aus (gelbe LED links)
     * fährt bei Hindernis (rot) nicht mehr vorwärts; muss rückwärts fahren
-  * **B geklickt** schaltet Spur Sensor an und aus (weiße LEDs)
+  * **B geklickt** schaltet Spur Sensor an und aus (weiße LED rechts)
     * bleibt auf einer schwarzen Linie stehen; aus schalten mit **B geklickt**
     * hier kann aber auch auf die Funktion *Spur folgen* umgeschaltet werden
   * **auf den Joystick drücken** hupen (nur wenn Hupe an Calli:Bot angebaut ist)
@@ -142,8 +142,8 @@ Ohne Encoder hängt die Länge einer Strecke u.a. von der Batterie Spannung ab u
 
 * **B geklickt** fährt geradeaus und viertel Drehung 8 mal hintereinander
   * mit drehen auf der Stelle soll ein Quadrat zweimal gefahren werden
-  * ist geeignet, um zu demonstrieren, wie ein Encoder funktioniert
-  * ist nur bei Modellen mit 2 Motoren (keine Servo Lenkung) möglich
+  * damit kann gezeigt werden, wie ein Encoder funktioniert
+  * ist nur bei Modellen mit 2 Rädern und 2 Motoren möglich
 
 #### Fahren und Lenken
 
