@@ -1,6 +1,14 @@
 
 > Diese Seite bei [https://calliope-net.github.io/fernsteuerung-cb2-e41/](https://calliope-net.github.io/fernsteuerung-cb2-e41/) öffnen.
 
+### Hardware
+
+* **Calli:bot 2** oder **Calli:bot 2 E** mit **Calliope mini** v1 oder v2
+  * MakeCode Projekt: **calliope-net/fernsteuerung-cb2-e41**
+* Fernbedienung: **Calliope mini** v1 oder v2
+  * optional [SparkFun Qwiic Joystick](https://www.sparkfun.com/products/15168)
+  * MakeCode Projekt: **calliope-net/fernsteuerung-s41**
+
 ### Calli:bot 2 ohne Fernbedienung
 
 * nach dem Einschalten wird die Funkgruppe, Typ und Batterie Spannung angezeigt
