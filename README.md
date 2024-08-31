@@ -169,6 +169,12 @@ Um dieses Repository in MakeCode zu bearbeiten.
 * klicke auf **Importieren** und dann auf **Importiere URL**
 * füge **calliope-net/fernsteuerung-cb2-e41** ein und klicke auf Importieren
 
+Das Projekt **calliope-net/fernsteuerung-cb2-e41** wurde mit MakeCode v4 für Calliope v1 und v2 entwickelt.
+Nach Übertragung der HEX Datei ist das Koppeln mit dem iPad (Bluetooth) nicht mehr möglich (*"pairing_mode": 0*).
+Eine neue HEX Datei muss entweder über USB Kabel übertragen werden oder vorher Programm 25 aus dem Flash geladen werden.
+
+Ist ein Calliope v3 auf Calli:bot geschraubt, kann die Einschränkung in der Datei pxt.json gelöscht werden und Bluetooth koppeln mit der App sollte funktionieren.
+
 ## Blocks preview
 
 This image shows the blocks code from the last commit in master.
