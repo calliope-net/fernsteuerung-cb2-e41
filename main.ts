@@ -57,7 +57,7 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
         cb2.writeMotorenStop()
         cb2.writecb2RgbLeds(0x000000, false)
     }
-    receiver.setFunktion(receiver.eFunktion.ng)
+    receiver.setFunktion(receiver.eFunktion.ng, receiver.eTimeoutDisable.nicht)
     Ultraschall_Sensor_Knopf_A = false
     cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
     cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
