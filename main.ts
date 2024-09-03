@@ -8,7 +8,6 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
     } else if (receiver.isFunktion(receiver.eFunktion.hindernis_ausweichen)) {
         receiver.setFunktion(receiver.eFunktion.ng)
     } else if (receiver.isFunktion(receiver.eFunktion.spur_folgen)) {
-        Stop = 20
         Ultraschall_Sensor_Knopf_A = !(Ultraschall_Sensor_Knopf_A)
     }
 })
@@ -64,8 +63,11 @@ cb2.onAbstandEvent(function (abstand_Sensor, abstand_Stop, cm) {
 })
 input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
     if (receiver.isFunktion(receiver.eFunktion.ng)) {
+        Stop = 20
+        Ultraschall_Sensor_Knopf_A = true
         receiver.setFunktion(receiver.eFunktion.spur_folgen)
     } else if (receiver.isFunktion(receiver.eFunktion.spur_folgen)) {
+        Ultraschall_Sensor_Knopf_A = false
         receiver.setFunktion(receiver.eFunktion.ng)
     }
 })
