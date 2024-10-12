@@ -84,9 +84,13 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
     cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
     cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
+    if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Fahrplan)) {
+        btf.zeige5x5Betriebsart(true, false)
+    } else {
+        btf.zeige5x5Buffer(receivedData)
+        btf.zeige5x5Joystick(receivedData)
+    }
     btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0x0000ff, true, true)
-    btf.zeige5x5Buffer(receivedData)
-    btf.zeige5x5Joystick(receivedData)
     pins.pinDigitalWrite(pins.pins_eDigitalPins(pins.eDigitalPins.C16), !(btf.getSchalter(receivedData, btf.e0Schalter.b0)))
 })
 function Konfiguration () {
