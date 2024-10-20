@@ -81,7 +81,7 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     }
     receiver.setFunktion(receiver.eFunktion.ng, receiver.eTimeoutDisable.nicht)
     Ultraschall_Sensor_Knopf_A = false
-    cb2.fahreJoystick(btf.btf_receivedBuffer19(), 50)
+    cb2.fahreJoystick(btf.btf_receivedBuffer19())
     cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
     cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Fahrplan)) {
@@ -119,7 +119,7 @@ let Ultraschall_Sensor_Knopf_A = false
 let Stop = 0
 cb2.beimStart()
 btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
-btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
+btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4, 2)
 basic.forever(function () {
     cb2.buffer_raiseAbstandEvent(btf.btf_receivedBuffer19())
     cb2.buffer_raiseSpurEvent(btf.btf_receivedBuffer19())
