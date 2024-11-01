@@ -71,6 +71,18 @@ input.onButtonEvent(Button.B, input.buttonEventClick(), function () {
         receiver.setFunktion(receiver.eFunktion.ng)
     }
 })
+function timeout1 () {
+    if (btf.timeout(30000)) {
+        cb2.writeMotorenStop()
+        control.reset()
+    } else if (btf.timeout(1000)) {
+        btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0xff0000, true, true)
+        cb2.writeMotorenStop()
+        cb2.writecb2RgbLeds(0x000000, false)
+    } else if (btf.timeout(1000)) {
+        btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0x00ff00)
+    }
+}
 input.onButtonEvent(Button.B, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.buttonBhold()
 })
@@ -79,7 +91,7 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
         cb2.writeMotorenStop()
         cb2.writecb2RgbLeds(0x000000, false)
     }
-    receiver.setFunktion(receiver.eFunktion.ng, receiver.eTimeoutDisable.nicht)
+    receiver.setFunktion(receiver.eFunktion.ng)
     Ultraschall_Sensor_Knopf_A = false
     cb2.fahreJoystick(btf.btf_receivedBuffer19())
     cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
@@ -127,14 +139,26 @@ basic.forever(function () {
     cb2.raiseSpurEvent(receiver.isFunktion(receiver.eFunktion.spur_folgen))
 })
 loops.everyInterval(700, function () {
-    if (btf.timeout(30000, true)) {
-        cb2.writeMotorenStop()
+    if (btf.timeout(120000)) {
         control.reset()
-    } else if (btf.timeout(1000)) {
+    } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p0Fahren, 30000)) {
+        cb2.writeMotorenStop()
+    } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p0Fahren, 1000)) {
         btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0xff0000, true, true)
         cb2.writeMotorenStop()
         cb2.writecb2RgbLeds(0x000000, false)
-    } else if (btf.timeout(1000, true)) {
+    } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p1Lokal, 20000)) {
+        cb2.writeMotorenStop()
+    } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p1Lokal, 1000)) {
+        btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0xffff00)
+    } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p2Fahrplan, 60000)) {
+        cb2.writeMotorenStop()
+        btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0x00ff00, true, true)
+    } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p2Fahrplan, 1000)) {
         btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0x00ff00)
+    } else if (!(receiver.isFunktion(receiver.eFunktion.ng)) && btf.timeout(1000)) {
+        btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0xffffff)
+    } else if (btf.timeout(1000)) {
+        btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0xff0080, true, true)
     }
 })
