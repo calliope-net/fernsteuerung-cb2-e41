@@ -11,6 +11,14 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
         Ultraschall_Sensor_Knopf_A = !(Ultraschall_Sensor_Knopf_A)
     }
 })
+receiver.onEncoderEvent(function (fahren, lenken, bp, ok, array) {
+    cb2.writeMotor128Servo16(fahren, lenken)
+    if (ok) {
+        btf.zeigeBIN_BufferPointer(bp, 2)
+    }
+    btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.b), array[0])
+    btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.c), array[1])
+})
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     if (receiver.isFunktion(receiver.eFunktion.ng) && cb2.writeEncoderReset()) {
         Ultraschall_Sensor_Knopf_A = false
@@ -94,7 +102,6 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     receiver.setFunktion(receiver.eFunktion.ng)
     Ultraschall_Sensor_Knopf_A = false
     cb2.fahreJoystick(btf.btf_receivedBuffer19())
-    cb2.fahrplanBuffer5Strecken(btf.btf_receivedBuffer19(), btf.e3aktiviert.m1)
     cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Fahrplan)) {
         btf.zeige5x5Betriebsart(true, false)
@@ -133,6 +140,7 @@ cb2.beimStart()
 btf.zeigeBIN(cb2.readVersionArray()[1], btf.ePlot.bin, 2)
 btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4, 2)
 basic.forever(function () {
+    receiver.buffer_raiseEncoderEvent(btf.btf_receivedBuffer19(), btf.btf_RadioPacketTime())
     cb2.buffer_raiseAbstandEvent(btf.btf_receivedBuffer19())
     cb2.buffer_raiseSpurEvent(btf.btf_receivedBuffer19())
     cb2.raiseAbstandEvent(receiver.isFunktion(receiver.eFunktion.hindernis_ausweichen) || Ultraschall_Sensor_Knopf_A, Stop, Stop + 5)
