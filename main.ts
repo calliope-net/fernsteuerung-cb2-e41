@@ -143,12 +143,14 @@ loops.everyInterval(700, function () {
         control.reset()
     } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p0Fahren, 30000)) {
         cb2.writeMotorenStop()
+        control.reset()
     } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p0Fahren, 1000)) {
         btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0xff0000, true, true)
         cb2.writeMotorenStop()
         cb2.writecb2RgbLeds(0x000000, false)
     } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p1Lokal, 20000)) {
         cb2.writeMotorenStop()
+        control.reset()
     } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p1Lokal, 1000)) {
         btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.a), 0xffff00)
     } else if (btf.timeoutReceivedBuffer(btf.e0Betriebsart.p2Fahrplan, 60000)) {
