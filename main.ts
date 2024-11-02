@@ -16,8 +16,8 @@ receiver.onEncoderEvent(function (fahren, lenken, bp, ok, array) {
     if (ok) {
         btf.zeigeBIN_BufferPointer(bp, 2)
     }
-    btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.b), array[0])
-    btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.c), array[1])
+    btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.b), receiver.encoderArray(array, receiver.eEncoderArray.colorb))
+    btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.c), receiver.encoderArray(array, receiver.eEncoderArray.colorc))
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     if (receiver.isFunktion(receiver.eFunktion.ng) && cb2.writeEncoderReset()) {
