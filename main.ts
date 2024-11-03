@@ -1,3 +1,9 @@
+receiver.on2EncoderEvent(function (links, rechts, array) {
+    cb2.writeMotoren128(links, rechts)
+    if (receiver.encoderArray(array, receiver.eSelectEncoder.status) == 2) {
+        btf.zeigeBIN_BufferPointer(receiver.encoderArray(array, receiver.eSelectEncoder.bPointer))
+    }
+})
 input.onButtonEvent(Button.AB, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 })
@@ -11,13 +17,11 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
         Ultraschall_Sensor_Knopf_A = !(Ultraschall_Sensor_Knopf_A)
     }
 })
-receiver.onEncoderEvent(function (fahren, lenken, bp, ok, array) {
+receiver.onEncoderEvent(function (fahren, lenken, array) {
     cb2.writeMotor128Servo16(fahren, lenken)
-    if (ok) {
-        btf.zeigeBIN_BufferPointer(bp, 2)
+    if (receiver.encoderArray(array, receiver.eSelectEncoder.status) == 2) {
+        btf.zeigeBIN_BufferPointer(receiver.encoderArray(array, receiver.eSelectEncoder.bPointer))
     }
-    btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.b), receiver.encoderArray(array, receiver.eEncoderArray.colorb))
-    btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.c), receiver.encoderArray(array, receiver.eEncoderArray.colorc))
 })
 input.onButtonEvent(Button.AB, input.buttonEventClick(), function () {
     if (receiver.isFunktion(receiver.eFunktion.ng) && cb2.writeEncoderReset()) {
