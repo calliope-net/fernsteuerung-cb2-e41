@@ -106,7 +106,6 @@ btf.onReceivedDataChanged(function (receivedData, changed) {
     receiver.setFunktion(receiver.eFunktion.ng)
     Ultraschall_Sensor_Knopf_A = false
     cb2.fahreJoystick(btf.btf_receivedBuffer19())
-    cb2.fahrplanBuffer2x2Motoren(btf.btf_receivedBuffer19(), btf.e3aktiviert.ma)
     if (btf.isBetriebsart(receivedData, btf.e0Betriebsart.p2Fahrplan)) {
         btf.zeige5x5Betriebsart(true, false)
     } else {
