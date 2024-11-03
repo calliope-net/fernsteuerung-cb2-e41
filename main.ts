@@ -1,3 +1,9 @@
+receiver.on2EncoderEvent(function (links, rechts, array) {
+    cb2.fahre2MotorenZeit(links, rechts, 25)
+    if (receiver.encoderArray(array, receiver.eSelectEncoder.status) == 2) {
+        btf.zeigeBIN_BufferPointer(receiver.encoderArray(array, receiver.eSelectEncoder.bPointer))
+    }
+})
 input.onButtonEvent(Button.AB, btf.buttonEventValue(ButtonEvent.Hold), function () {
     btf.zeigeBIN(cb2.readSpannung(), btf.ePlot.bcd, 4)
 })
@@ -13,8 +19,6 @@ input.onButtonEvent(Button.A, input.buttonEventClick(), function () {
 })
 receiver.onEncoderEvent(function (fahren, lenken, array) {
     cb2.writeMotor128Servo16(fahren, lenken)
-    btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.b), receiver.encoderArray(array, receiver.eSelectEncoder.colorb))
-    btf.setLedColors(btf.btf_RgbLed(btf.eRgbLed.c), receiver.encoderArray(array, receiver.eSelectEncoder.colorc))
     if (receiver.encoderArray(array, receiver.eSelectEncoder.status) == 2) {
         btf.zeigeBIN_BufferPointer(receiver.encoderArray(array, receiver.eSelectEncoder.bPointer))
     }
